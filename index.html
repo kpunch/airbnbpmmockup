@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Senior PM – Community Platform @ Airbnb</title>
-  <meta name="robots" content="noindex, nofollow">
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
     header { background-color: #FF5A5F; color: white; padding: 2rem; text-align: center; }
-    .video-container { position: relative; height: 480px; text-align: center; }
-    .video-container img { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: auto; height: 100%; z-index: 0; }
-    .video-container iframe { position: relative; z-index: 1; width: 341px; height: 1046px; border: none; margin: 0 auto; display: block; }
+    .video-container { position: relative; text-align: center; width: 100%; background-color: #f1f1f1; }
+    .video-container img { width: 100%; height: 350px; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0; }
+    .video-container iframe { position: relative; z-index: 1; width: 625px; height: 350px; margin: 0 auto; display: block; }
     section { padding: 2rem; max-width: 1000px; margin: auto; }
     h2 { font-size: 1.3rem; cursor: pointer; margin-top: 1.5rem; }
     .accordion { display: none; margin-top: 0.5rem; }
@@ -19,9 +18,19 @@
     .carousel { position: relative; max-width: 75%; margin: 2rem auto; overflow: hidden; }
     .carousel img { width: 100%; height: 216px; object-fit: cover; display: none; }
     .carousel img.active { display: block; }
-    .carousel-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
-    .left { left: 0; }
-    .right { right: 0; }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      color: white;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    .carousel-nav.left { left: 0; }
+    .carousel-nav.right { right: 0; }
     .cta-buttons { text-align: center; margin-top: 2rem; }
     .cta-buttons a { background-color: #90ee90; color: purple; padding: 1rem 2rem; margin: 0.5rem; text-decoration: none; font-weight: bold; border-radius: 5px; }
     footer { text-align: center; padding: 2rem; background: #eee; margin-top: 2rem; }
@@ -35,7 +44,7 @@
 
 <div class="video-container">
   <img src="/pmbackdrop.png" alt="Video Background" />
-  <iframe src="https://www.youtube.com/embed/HbFAXuBagnQ?autoplay=1&mute=1&loop=1&playlist=HbFAXuBagnQ" title="Get Together"></iframe>
+  <iframe width="625" height="350" src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1" title="Get Together" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 <section>
@@ -45,9 +54,6 @@
 
   <h2>The Team</h2>
   <p>The Community Experience Platform team designs the backbone for support interactions across Airbnb. From trust signals and user reporting to seamless customer service journeys, we enable scalable, empathetic experiences that are reliable and personal. Our PMs partner closely with engineering, design, analytics, and operations to bring clarity and care to every user interaction.</p>
-
-  <h2>✨ Role Overview</h2>
-  <p>You’ll define and lead the product vision behind Airbnb’s support systems, driving innovation across trust, experience, and scalability. You’ll collaborate across product marketing, engineering, design, and analytics to deliver human-centered solutions that scale.</p>
 
   <h2 onclick="toggle('community')">🌍 The Community You Will Join</h2>
   <div class="accordion" id="community">
@@ -91,16 +97,6 @@
     <p>Airbnb is committed to creating a diverse workplace where everyone belongs. Reasonable accommodations are provided for candidates with disabilities.</p>
   </div>
 
-  <h2 onclick="toggle('ergs')">🧑‍🤝‍🧑 Enterprise Resource Groups (ERGs)</h2>
-  <div class="accordion" id="ergs">
-    <p>Airbnb's ERGs are employee-led groups that foster belonging and celebrate diverse communities across our global workforce. These include groups for women, LGBTQ+ employees, veterans, Black employees, Latinx communities, and more. ERGs play a key role in product inclusivity, community events, mentorship, and company policy evolution.</p>
-  </div>
-
-  <h2 onclick="toggle('benefits')">🎁 Perks and Benefits</h2>
-  <div class="accordion" id="benefits">
-    <img src="/beneis.png" alt="Airbnb Benefits Overview" style="width:100%; max-width:800px; display:block; margin:auto;" />
-  </div>
-
   <h2>📸 Work Culture</h2>
   <div class="carousel">
     <img src="/sketching.png" alt="Sketching" class="active" />
@@ -111,26 +107,8 @@
     <img src="/deserthouse.png" alt="Desert House" />
     <img src="/groupchat.png" alt="Group Chat" />
     <img src="/stoneentrywelcome.png" alt="Stone Entry" />
-    <button class="carousel-nav left" onclick="prevSlide()">←</button>
-    <button class="carousel-nav right" onclick="nextSlide()">→</button>
-  </div>
-
-  <h2>📰 In the News</h2>
-  <ul>
-    <li><strong>Brian Chesky</strong>: "Product is a form of storytelling." (TechCrunch)<br>
-      <em>Brian Chesky discusses how Airbnb approaches product design like narrative structure...</em>
-      <a href="https://techcrunch.com/2023/10/12/airbnb-product-narrative/" target="_blank">more</a></li>
-    <li>Airbnb to expand beyond travel with $200M investment (Business Insider)<br>
-      <em>Airbnb announced a major expansion to new verticals and product lines starting in 2025...</em>
-      <a href="https://www.businessinsider.com/airbnb-expansion-beyond-travel-2025" target="_blank">more</a></li>
-    <li>Voted #1 Best Workplace for Innovators – 2024 (Fast Company)<br>
-      <em>Airbnb tops the list in Fast Company’s annual roundup of most innovative workplaces...</em>
-      <a href="https://www.fastcompany.com/airbnb-best-workplace-2024" target="_blank">more</a></li>
-  </ul>
-
-  <div class="cta-buttons">
-    <a href="https://careers.airbnb.com/positions/6688969/">Apply for this role</a>
-    <a href="https://careers.airbnb.com/positions/?_departments=product">Or check out our other PM & PMM roles</a>
+    <button class="carousel-nav left" onclick="prevSlide()">&#8592;</button>
+    <button class="carousel-nav right" onclick="nextSlide()">&#8594;</button>
   </div>
 </section>
 
@@ -160,7 +138,12 @@
     currentSlide = (currentSlide + 1) % imgs.length;
     showSlide(currentSlide);
   }
+  function autoSlide() {
+    nextSlide();
+  }
   showSlide(currentSlide);
+  setInterval(autoSlide, 2500);
 </script>
+
 </body>
 </html>
