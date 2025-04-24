@@ -55,30 +55,20 @@
       position: relative;
       width: 928px;
       margin: 2rem auto;
-      display: flex;
-      align-items: center;
+      overflow: hidden;
       background-color: #f9f9f9;
     }
     .carousel-images {
       display: flex;
-      gap: 5px;
-      overflow: hidden;
-      width: 858px;
+      transition: transform 1s ease;
+      height: 260px;
     }
     .carousel-images img {
       width: 280px;
-      height: 216px;
+      height: 260px;
       object-fit: cover;
+      margin-right: 5px;
       flex-shrink: 0;
-    }
-    .carousel-nav {
-      background: none;
-      border: none;
-      font-size: 2rem;
-      color: black;
-      cursor: pointer;
-      width: 35px;
-      height: 35px;
     }
     .cta-buttons {
       text-align: center;
@@ -111,62 +101,46 @@
   </div>
 
   <section>
-    <h2>About Airbnb</h2>
-    <p>Airbnb was founded in 2007 in San Francisco when two hosts welcomed three guests. Today, we are a trusted global community of over 5 million hosts who have welcomed more than 2 billion guests in nearly every country in the world. Our mission is to create a world where anyone can belong anywhere, and at the heart of this mission is our product—designed with empathy, inclusion, and storytelling in mind.</p>
-
-    <h2>The Role: Senior Product Manager, Community Experience Platform</h2>
-    <p>This is not your ordinary PM role. You’ll be leading one of the most meaningful parts of our product: how our guests and hosts feel supported, heard, and safe. From the moment a traveler reaches out for help to the moment their issue is resolved, you’ll own the full support experience. Think customer care meets UX innovation meets platform scalability.</p>
-    <p>You'll define the long-term product strategy for key experience platforms that empower every interaction across support, community integrity, and peer assistance. You'll lead major cross-functional initiatives, collaborating deeply with Design, Engineering, Product Marketing, and Trust & Safety, and you’ll drive decisions from a place of user-centricity and measurable business impact.</p>
-
-    <h2 onclick="toggle('community')">🌍 The Community You Will Join</h2>
-    <div class="accordion" id="community">
-      <p>You will join a visionary product org that leads with principles and people-first design. PMs here are expected to challenge the status quo, work backwards from bold goals, and build experiences that scale across cultures, devices, and communities. At Airbnb, platform PMs are trusted thought leaders—not backlog managers.</p>
-    </div>
-
-    <h2 onclick="toggle('difference')">🚀 The Difference You Will Make</h2>
-    <div class="accordion" id="difference">
-      <ul>
-        <li>Architect a seamless support platform for guests and hosts globally</li>
-        <li>Build trust through tools, systems, and flows that just work</li>
-        <li>Drive metrics and usability improvements that improve support resolution and satisfaction</li>
-        <li>Serve as the connective tissue between engineering, ops, policy, and CX teams</li>
-      </ul>
-    </div>
-
-    <h2 onclick="toggle('day')">🗓 A Typical Day</h2>
-    <div class="accordion" id="day">
-      <ul>
-        <li>Refine support product strategy in a whiteboarding session with design and trust ops</li>
-        <li>Review feedback from users and internal Airbnb agents to prioritize roadmap items</li>
-        <li>Meet with engineers to unblock a high-impact release</li>
-        <li>Collaborate with analytics to validate platform health and KPIs</li>
-      </ul>
-    </div>
-
-    <h2 onclick="toggle('expertise')">🧠 Your Expertise</h2>
-    <div class="accordion" id="expertise">
-      <ul>
-        <li>8+ years of product experience, ideally in trust & safety, support, or platform PM roles</li>
-        <li>Deep empathy for users, from seasoned hosts to first-time travelers</li>
-        <li>Fluency in platform thinking: building shared services that scale across teams</li>
-        <li>Clear communicator, storyteller, and systems thinker</li>
-      </ul>
-    </div>
-
     <h2>📸 Work Culture</h2>
     <div class="carousel">
-      <button class="carousel-nav left" onclick="prevSlide()">◀</button>
       <div class="carousel-images" id="carouselImages">
-        <img src="/sketching.png" alt="Sketching" />
-        <img src="/poshpatio.png" alt="Patio" />
-        <img src="/vibinglaptop.png" alt="Vibing with Laptop" />
-        <img src="/chateau.png" alt="Chateau" />
-        <img src="/Lunchchat.png" alt="Lunch Chat" />
-        <img src="/deserthouse.png" alt="Desert House" />
-        <img src="/groupchat.png" alt="Group Chat" />
-        <img src="/stoneentrywelcome.png" alt="Stone Entry" />
+        <img src="sketching.png" alt="Sketching" />
+        <img src="poshpatio.png" alt="Patio" />
+        <img src="vibinglaptop.png" alt="Vibing with Laptop" />
+        <img src="chateau.png" alt="Chateau" />
+        <img src="Lunchchat.png" alt="Lunch Chat" />
+        <img src="deserthouse.png" alt="Desert House" />
+        <img src="groupchat.png" alt="Group Chat" />
+        <img src="stoneentrywelcome.png" alt="Stone Entry" />
       </div>
-      <button class="carousel-nav right" onclick="nextSlide()">▶</button>
+    </div>
+
+    <h2 onclick="toggle('values')">💡 Airbnb's Core Values</h2>
+    <div class="accordion" id="values">
+      <ul>
+        <li>Champion the Mission: Be a host and create a world where anyone can belong anywhere.</li>
+        <li>Be a Cereal Entrepreneur: Think creatively and resourcefully like our founders did with breakfast cereal.</li>
+        <li>Embrace the Adventure: Be curious, take risks, and seek learning in every step.</li>
+        <li>Be a Host: Show hospitality, make others feel included and respected in every interaction.</li>
+      </ul>
+    </div>
+
+    <h2 onclick="toggle('ergs')">🤝 Employee Resource Groups (ERGs)</h2>
+    <div class="accordion" id="ergs">
+      <ul>
+        <li>Black@ - Empowering Black employees and allies.</li>
+        <li>Women@ - Focused on gender equity and leadership growth.</li>
+        <li>Abilities@ - Advocating for accessibility and inclusion for people with disabilities.</li>
+        <li>AirPride - Supporting LGBTQ+ employees and building community.</li>
+        <li>Juntos - Latinx/Hispanic community network within Airbnb.</li>
+        <li>Asian@ - Celebrating and elevating Asian cultures and experiences.</li>
+        <li>Veterans@ - Supporting veterans, military families, and allies.</li>
+      </ul>
+    </div>
+
+    <h2 onclick="toggle('benefits')">🎁 Benefits & Perks</h2>
+    <div class="accordion" id="benefits">
+      <img src="beneis.png" alt="Airbnb Benefits Overview" style="width:100%; max-width:800px; display:block; margin:auto;" />
     </div>
 
     <div class="cta-buttons">
@@ -186,23 +160,20 @@
       document.getElementById(id).classList.toggle('open');
     }
 
-    let scrollPosition = 0;
-    const imageWidth = 285; // 280px image + 5px gap
-    const carousel = document.getElementById('carouselImages');
+    let carousel = document.getElementById('carouselImages');
+    let imageWidth = 285;
+    let currentIndex = 0;
 
-    function nextSlide() {
-      scrollPosition += imageWidth;
-      if (scrollPosition >= carousel.scrollWidth - 858) scrollPosition = 0;
-      carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    function autoSlide() {
+      currentIndex++;
+      const totalImages = carousel.children.length;
+      if (currentIndex + 3 > totalImages) {
+        currentIndex = 0;
+      }
+      carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
     }
 
-    function prevSlide() {
-      scrollPosition -= imageWidth;
-      if (scrollPosition < 0) scrollPosition = carousel.scrollWidth - 858;
-      carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-    }
-
-    setInterval(nextSlide, 2500);
+    setInterval(autoSlide, 3500);
   </script>
 </body>
 </html>
