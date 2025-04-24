@@ -23,19 +23,9 @@
       background-color: #f9f9f9;
       padding: 2rem 0;
     }
-    .video-frame {
-      display: inline-block;
-      padding: 8px;
-      border: 24px solid #8B4513;
-      background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
-      background-size: cover;
-      box-shadow: inset 0 0 4px #fff, 0 0 10px rgba(0,0,0,0.3);
-    }
-    .video-frame iframe {
+    .video-container iframe {
       width: 928px;
       height: 521px;
-      display: block;
-      border: none;
     }
     section {
       padding: 2rem;
@@ -46,12 +36,6 @@
       font-size: 1.3rem;
       cursor: pointer;
       margin-top: 1.5rem;
-    }
-    p.styled {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-left: 2rem;
-      margin-bottom: 1.5rem;
     }
     .accordion {
       display: none;
@@ -111,59 +95,60 @@
   </header>
 
   <div class="video-container">
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+    <iframe src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
   <section>
-    <p class="styled"><strong>📘 About Airbnb</strong><br>
-      Airbnb was born in 2007 when two hosts welcomed three guests to their San Francisco home, and has since grown to over 5 million hosts who have welcomed over 2 billion guest arrivals in almost every country across the globe. Every day, hosts offer unique stays and experiences that make it possible for guests to connect with communities in a more authentic way.
-    </p>
+    <p><strong>📘 About Airbnb</strong><br>
+    Airbnb was born in 2007 when two hosts welcomed three guests to their San Francisco home, and has since grown to over 5 million hosts who have welcomed over 2 billion guest arrivals in almost every country across the globe. Every day, hosts offer unique stays and experiences that make it possible for guests to connect with communities in a more authentic way.</p>
 
-    <p class="styled"><strong>🌍 The Community You Will Join</strong><br>
-      Airbnb is a vision and mission driven company. Our Product Managers (PMs) embody this culture and mindset. Platform Product Managers here imagine the ideal end state for our community (guests and hosts) first, work backwards from it, and deliver the vision in a scalable way. They champion a winning strategy and leverage metrics to ensure we are making progress against it.
-    </p>
+    <p><strong>🌍 The Community You Will Join</strong><br>
+    Airbnb is a vision and mission driven company. Our Product Managers (PMs) embody this culture and mindset. Platform Product Managers here imagine the ideal end state for our community (guests and hosts) first, work backwards from it, and deliver the vision in a scalable way. They champion a winning strategy and leverage metrics to ensure we are making progress against it. They partner with talented cross-functional team members (across product marketing, engineering, design, analytics, etc.) and lead teams to execute upon a shared vision. We are looking for leaders who want to join us in this journey to accomplish our mission of creating belonging everywhere.</p>
 
     <h2 onclick="toggle('difference')">✨ The Difference You Will Make</h2>
     <div class="accordion" id="difference">
-      <p>A support journey starts from the moment a guest or a host reaches out for help and ends when their challenge is resolved. PMs at Community Experience Platform lead cross-team collaborations and deliver best-of-class support experiences and platform capabilities. Keen eyes for user experience, collaboration, and influence are must-haves to thrive. This PM will lead high-profile projects and work across multiple teams company-wide.</p>
+      <p>A support journey starts from the moment a guest or a host reaches out for help and ends when his/her challenge is resolved. PMs at Community Experience Platform lead cross team collaborations and deliver best-of-the-class support experience and platform capabilities. Keen eyes on great user experience, strong collaboration and influence skills are must-haves to thrive as a PM in Community Experience Platform. The Senior Platform Product Manager, Community Experience Platform will be responsible for major experience platforms that power Airbnb’s support experiences. The successful candidate will lead high profile projects and work collaboratively across multiple cross functional teams across the company.</p>
     </div>
 
     <h2 onclick="toggle('typical')">🗓 A Typical Day</h2>
     <div class="accordion" id="typical">
       <ul>
         <li>Understand the competitive landscape. Challenge the status quo.</li>
-        <li>Inspire teams through design and product marketing collaboration.</li>
-        <li>Define success using measurable OKRs.</li>
-        <li>Build a winning product strategy and roadmap.</li>
-        <li>Partner with tech leads and cross-functional leaders to execute.</li>
-        <li>Regularly update senior leadership on roadmap and progress.</li>
+        <li>Influence design and product marketing teams and inspire people towards a unified outcome.</li>
+        <li>Define success with clearly measurable objectives and key results.</li>
+        <li>Define a winning product strategy and create a sound roadmap.</li>
+        <li>Align the vision, OKR, strategy and roadmap with senior leaders and stakeholders across the company.</li>
+        <li>Prioritize work based on inputs from many stakeholders, while being flexible to iterate/change.</li>
+        <li>Maintain product backlog and the product roadmap.</li>
+        <li>Partner with senior tech leads and execute the vision with cross functional leaders from multiple teams.</li>
+        <li>Present product roadmap and status to the leadership on an ongoing basis.</li>
       </ul>
     </div>
 
     <h2 onclick="toggle('expertise')">🧠 Your Expertise</h2>
     <div class="accordion" id="expertise">
       <ul>
-        <li>8+ years in product management or product design.</li>
-        <li>Excellent communication, adaptable to different audiences.</li>
-        <li>Strong grasp of user-centered design and technical fluency.</li>
-        <li>Comfortable collaborating beyond your immediate team.</li>
-        <li>Visionary thinking paired with excellent execution.</li>
+        <li>8+ years of product management, or product design experience (at least 5 out of the 8 years in a product management role).</li>
+        <li>Exceptional communication skills. Being able to adapt communication style for different types of audiences.</li>
+        <li>Ability to appreciate and articulate great user experience.</li>
+        <li>Ability to quickly absorb technical concepts and communicate them to a non-technical audience.</li>
+        <li>Outcome-oriented. Articulates the desired outcome and works collaboratively to create a path to achieve it.</li>
+        <li>Experience working with partners beyond just one’s immediate cross functional team in a product management or business role.</li>
+        <li>Radical thinking paired with strong execution. Can envision a world different from the status quo with the ability to articulate a clear path to get there.</li>
       </ul>
     </div>
 
     <h2 onclick="toggle('location')">📍 Your Location</h2>
     <div class="accordion" id="location">
-      <p>This role is US remote-eligible. You must reside in a state where Airbnb, Inc. is registered. The list of eligible states may evolve.</p>
+      <p>This position is US - Remote Eligible. The role may include occasional work at an Airbnb office or attendance at offsites, as agreed to with your manager. While the position is Remote Eligible, you must live in a state where Airbnb, Inc. has a registered entity.</p>
     </div>
 
     <h2 onclick="toggle('inclusion')">🌈 Our Commitment To Inclusion & Belonging</h2>
     <div class="accordion" id="inclusion">
-      <p>Airbnb values diversity and fosters belonging through ERGs including:</p>
+      <p>Airbnb is committed to working with the broadest talent pool possible. We believe diverse ideas foster innovation and engagement. Employee Resource Groups (ERGs) include:</p>
       <ul>
         <li><a href="https://www.instagram.com/blackatairbnb/" target="_blank">Black@Airbnb</a></li>
-        <li><a href="https://www.instagram.com/airpride/" target="_blank">AirPride (LGBTQ+)</a></li>
+        <li><a href="https://www.instagram.com/airpride/" target="_blank">AirPride</a> (LGBTQ+ ERG)</li>
         <li><a href="https://www.instagram.com/latinxatairbnb/" target="_blank">Latinx@Airbnb</a></li>
         <li><a href="https://www.instagram.com/womenatairbnb/" target="_blank">Women@Airbnb</a></li>
         <li><a href="https://www.instagram.com/abilitiesatairbnb/" target="_blank">Abilities@Airbnb</a></li>
@@ -180,9 +165,31 @@
     <h2>☀️ A solid mission AND great vibes?? Yup!!</h2>
     <div class="carousel">
       <div class="carousel-images" id="carouselImages">
-        <!-- Primary + duplicated image set -->
-        ${['sketching', 'poshpatio', 'vibinglaptop', 'chateau', 'Lunchchat', 'deserthouse', 'groupchat', 'stoneentrywelcome']
-          .flatMap(name => [1, 2, 3].map(() => `<img src="${name}.png" alt="${name}" />`)).join('\n')}
+        <img src="sketching.png" alt="Sketching" />
+        <img src="poshpatio.png" alt="Patio" />
+        <img src="vibinglaptop.png" alt="Vibing with Laptop" />
+        <img src="chateau.png" alt="Chateau" />
+        <img src="Lunchchat.png" alt="Lunch Chat" />
+        <img src="deserthouse.png" alt="Desert House" />
+        <img src="groupchat.png" alt="Group Chat" />
+        <img src="stoneentrywelcome.png" alt="Stone Entry" />
+        <!-- duplicates -->
+        <img src="sketching.png" alt="Sketching" />
+        <img src="poshpatio.png" alt="Patio" />
+        <img src="vibinglaptop.png" alt="Vibing with Laptop" />
+        <img src="chateau.png" alt="Chateau" />
+        <img src="Lunchchat.png" alt="Lunch Chat" />
+        <img src="deserthouse.png" alt="Desert House" />
+        <img src="groupchat.png" alt="Group Chat" />
+        <img src="stoneentrywelcome.png" alt="Stone Entry" />
+        <img src="sketching.png" alt="Sketching" />
+        <img src="poshpatio.png" alt="Patio" />
+        <img src="vibinglaptop.png" alt="Vibing with Laptop" />
+        <img src="chateau.png" alt="Chateau" />
+        <img src="Lunchchat.png" alt="Lunch Chat" />
+        <img src="deserthouse.png" alt="Desert House" />
+        <img src="groupchat.png" alt="Group Chat" />
+        <img src="stoneentrywelcome.png" alt="Stone Entry" />
       </div>
     </div>
 
