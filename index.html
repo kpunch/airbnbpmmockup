@@ -3,146 +3,206 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Senior PM – Community Platform @ Airbnb</title>
+  <title>Senior Product Manager – Community Platform @ Airbnb</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
-    header { background-color: #FF5A5F; color: white; padding: 2rem; text-align: center; }
-    .video-container { position: relative; text-align: center; width: 100%; background-color: #f9f9f9; }
-    .video-container img { width: 100%; height: 350px; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0; }
-    .video-container iframe { position: relative; z-index: 1; width: 928px; height: 521px; margin: 0 auto; display: block; }
-    section { padding: 2rem; max-width: 1000px; margin: auto; }
-    h2 { font-size: 1.3rem; cursor: pointer; margin-top: 1.5rem; }
-    .accordion { display: none; margin-top: 0.5rem; }
-    .accordion.open { display: block; }
-    ul { list-style-type: disc; margin-left: 2rem; }
-    .carousel { position: relative; max-width: 75%; margin: 2rem auto; overflow: hidden; }
-    .carousel img { width: 100%; height: 216px; object-fit: cover; display: none; }
-    .carousel img.active { display: block; }
-    .carousel-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #FF5A5F;
       color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .video-container {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      background-color: #f9f9f9;
+    }
+    .video-container iframe {
+      width: 928px;
+      height: 521px;
+      margin: 0 auto;
+      display: block;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.4rem;
+      cursor: pointer;
+      margin-top: 1.5rem;
+    }
+    .accordion {
+      display: none;
+      margin-top: 0.5rem;
+    }
+    .accordion.open {
+      display: block;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+    .carousel {
+      position: relative;
+      width: 928px;
+      margin: 2rem auto;
+      display: flex;
+      align-items: center;
+      background-color: #f9f9f9;
+    }
+    .carousel-images {
+      display: flex;
+      gap: 5px;
+      overflow: hidden;
+      width: 858px;
+    }
+    .carousel-images img {
+      width: 280px;
+      height: 216px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .carousel-nav {
+      background: none;
       border: none;
       font-size: 2rem;
+      color: black;
       cursor: pointer;
-      padding: 0.5rem;
+      width: 35px;
+      height: 35px;
     }
-    .carousel-nav.left { left: 0; }
-    .carousel-nav.right { right: 0; }
-    .cta-buttons { text-align: center; margin-top: 2rem; }
-    .cta-buttons a { background-color: #90ee90; color: purple; padding: 1rem 2rem; margin: 0.5rem; text-decoration: none; font-weight: bold; border-radius: 5px; }
-    footer { text-align: center; padding: 2rem; background: #eee; margin-top: 2rem; }
+    .cta-buttons {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta-buttons a {
+      background-color: #90ee90;
+      color: purple;
+      padding: 1rem 2rem;
+      margin: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>🏠 Senior Product Manager, Community Experience Platform @ Airbnb</h1>
+  </header>
 
-<header>
-  <h1>🏠 Senior PM, Community Experience Platform @ Airbnb</h1>
-</header>
-
-<div class="video-container">
-  <iframe width="625" height="350" src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1" title="Get Together" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-<section>
-  <h2>About Us</h2>
-  <p>Airbnb is a global community built on sharing. Since 2007, our mission has been to create a world where anyone can belong anywhere. We help hosts share their homes and experiences with guests in more than 220 countries and regions.</p>
-  <p>Our approach blends design-first principles, deep community connection, and tech innovation to reimagine how people travel and live. Every product we build supports our belief in human connection, inclusivity, and trust.</p>
-
-  <h2>The Team</h2>
-  <p>The Community Experience Platform team designs the backbone for support interactions across Airbnb. From trust signals and user reporting to seamless customer service journeys, we enable scalable, empathetic experiences that are reliable and personal. Our PMs partner closely with engineering, design, analytics, and operations to bring clarity and care to every user interaction.</p>
-
-  <h2 onclick="toggle('community')">🌍 The Community You Will Join</h2>
-  <div class="accordion" id="community">
-    <p>Platform PMs at Airbnb imagine the ideal end state first, work backwards from it, and deliver that vision. They leverage metrics, inspire teams, and create systems that uphold our mission of creating belonging everywhere.</p>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1" title="Get Together" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 
-  <h2 onclick="toggle('difference')">🚀 The Difference You Will Make</h2>
-  <div class="accordion" id="difference">
-    <ul>
-      <li>Drive platform capabilities that power best-in-class support experiences</li>
-      <li>Collaborate cross-functionally across high-impact teams</li>
-      <li>Deliver product solutions that embody empathy and trust</li>
-    </ul>
-  </div>
+  <section>
+    <h2>About Airbnb</h2>
+    <p>Airbnb was founded in 2007 in San Francisco when two hosts welcomed three guests. Today, we are a trusted global community of over 5 million hosts who have welcomed more than 2 billion guests in nearly every country in the world. Our mission is to create a world where anyone can belong anywhere, and at the heart of this mission is our product—designed with empathy, inclusion, and storytelling in mind.</p>
 
-  <h2 onclick="toggle('day')">🗓 A Typical Day</h2>
-  <div class="accordion" id="day">
-    <ul>
-      <li>Define OKRs (Objectives and Key Results), align with senior leadership</li>
-      <li>Challenge the status quo and influence design & product marketing</li>
-      <li>Maintain the roadmap and prioritize effectively</li>
-    </ul>
-  </div>
+    <h2>The Role: Senior Product Manager, Community Experience Platform</h2>
+    <p>This is not your ordinary PM role. You’ll be leading one of the most meaningful parts of our product: how our guests and hosts feel supported, heard, and safe. From the moment a traveler reaches out for help to the moment their issue is resolved, you’ll own the full support experience. Think customer care meets UX innovation meets platform scalability.</p>
+    <p>You'll define the long-term product strategy for key experience platforms that empower every interaction across support, community integrity, and peer assistance. You'll lead major cross-functional initiatives, collaborating deeply with Design, Engineering, Product Marketing, and Trust & Safety, and you’ll drive decisions from a place of user-centricity and measurable business impact.</p>
 
-  <h2 onclick="toggle('expertise')">🧠 Your Expertise</h2>
-  <div class="accordion" id="expertise">
-    <ul>
-      <li>8+ years in PM or product design; at least 5 years in PM</li>
-      <li>Exceptional communication and cross-functional influence</li>
-      <li>Deep empathy for user experience and technical fluency</li>
-    </ul>
-  </div>
+    <h2 onclick="toggle('community')">🌍 The Community You Will Join</h2>
+    <div class="accordion" id="community">
+      <p>You will join a visionary product org that leads with principles and people-first design. PMs here are expected to challenge the status quo, work backwards from bold goals, and build experiences that scale across cultures, devices, and communities. At Airbnb, platform PMs are trusted thought leaders—not backlog managers.</p>
+    </div>
 
-  <h2 onclick="toggle('location')">📍 Your Location</h2>
-  <div class="accordion" id="location">
-    <p>This is a U.S.-based remote eligible position (with limited state exclusions). Occasional travel to Airbnb offices or offsites may be requested.</p>
-  </div>
+    <h2 onclick="toggle('difference')">🚀 The Difference You Will Make</h2>
+    <div class="accordion" id="difference">
+      <ul>
+        <li>Architect a seamless support platform for guests and hosts globally</li>
+        <li>Build trust through tools, systems, and flows that just work</li>
+        <li>Drive metrics and usability improvements that improve support resolution and satisfaction</li>
+        <li>Serve as the connective tissue between engineering, ops, policy, and CX teams</li>
+      </ul>
+    </div>
 
-  <h2 onclick="toggle('inclusion')">🤝 Our Commitment to Inclusion & Belonging</h2>
-  <div class="accordion" id="inclusion">
-    <p>Airbnb is committed to creating a diverse workplace where everyone belongs. Reasonable accommodations are provided for candidates with disabilities.</p>
-  </div>
+    <h2 onclick="toggle('day')">🗓 A Typical Day</h2>
+    <div class="accordion" id="day">
+      <ul>
+        <li>Refine support product strategy in a whiteboarding session with design and trust ops</li>
+        <li>Review feedback from users and internal Airbnb agents to prioritize roadmap items</li>
+        <li>Meet with engineers to unblock a high-impact release</li>
+        <li>Collaborate with analytics to validate platform health and KPIs</li>
+      </ul>
+    </div>
 
-  <h2>📸 Work Culture</h2>
-  <div class="carousel">
-    <img src="/sketching.png" alt="Sketching" class="active" />
-    <img src="/poshpatio.png" alt="Patio" />
-    <img src="/vibinglaptop.png" alt="Vibing with Laptop" />
-    <img src="/chateau.png" alt="Chateau" />
-    <img src="/Lunchchat.png" alt="Lunch Chat" />
-    <img src="/deserthouse.png" alt="Desert House" />
-    <img src="/groupchat.png" alt="Group Chat" />
-    <img src="/stoneentrywelcome.png" alt="Stone Entry" />
-    <button class="carousel-nav left" onclick="prevSlide()">&#8592;</button>
-    <button class="carousel-nav right" onclick="nextSlide()">&#8594;</button>
-  </div>
-</section>
+    <h2 onclick="toggle('expertise')">🧠 Your Expertise</h2>
+    <div class="accordion" id="expertise">
+      <ul>
+        <li>8+ years of product experience, ideally in trust & safety, support, or platform PM roles</li>
+        <li>Deep empathy for users, from seasoned hosts to first-time travelers</li>
+        <li>Fluency in platform thinking: building shared services that scale across teams</li>
+        <li>Clear communicator, storyteller, and systems thinker</li>
+      </ul>
+    </div>
 
-<footer>
-  <p>👋 Connect with Keith Punches for a 15 or 30-min coffee chat:</p>
-  <a href="https://calendly.com/keith-realtor-dot-com/ta-chat">☕ 30 Min</a> |
-  <a href="https://calendly.com/keith-realtor-dot-com/ta-chat-clone">☕ 15 Min</a>
-</footer>
+    <h2>📸 Work Culture</h2>
+    <div class="carousel">
+      <button class="carousel-nav left" onclick="prevSlide()">◀</button>
+      <div class="carousel-images" id="carouselImages">
+        <img src="/sketching.png" alt="Sketching" />
+        <img src="/poshpatio.png" alt="Patio" />
+        <img src="/vibinglaptop.png" alt="Vibing with Laptop" />
+        <img src="/chateau.png" alt="Chateau" />
+        <img src="/Lunchchat.png" alt="Lunch Chat" />
+        <img src="/deserthouse.png" alt="Desert House" />
+        <img src="/groupchat.png" alt="Group Chat" />
+        <img src="/stoneentrywelcome.png" alt="Stone Entry" />
+      </div>
+      <button class="carousel-nav right" onclick="nextSlide()">▶</button>
+    </div>
 
-<script>
-  function toggle(id) {
-    document.getElementById(id).classList.toggle('open');
-  }
-  let currentSlide = 0;
-  const imgs = document.querySelectorAll(".carousel img");
-  function showSlide(index) {
-    imgs.forEach((img, i) => {
-      img.classList.remove("active");
-      if (i === index) img.classList.add("active");
-    });
-  }
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + imgs.length) % imgs.length;
-    showSlide(currentSlide);
-  }
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % imgs.length;
-    showSlide(currentSlide);
-  }
-  function autoSlide() {
-    nextSlide();
-  }
-  showSlide(currentSlide);
-  setInterval(autoSlide, 2500);
-</script>
+    <div class="cta-buttons">
+      <a href="https://careers.airbnb.com/positions/6688969/">Apply for this role</a>
+      <a href="https://careers.airbnb.com/positions/?_departments=product">Or check out our other PM & PMM roles</a>
+    </div>
+  </section>
 
+  <footer>
+    <p>👋 Connect with Keith Punches for a 15 or 30-min coffee chat:</p>
+    <a href="https://calendly.com/keith-realtor-dot-com/ta-chat">☕ 30 Min</a> |
+    <a href="https://calendly.com/keith-realtor-dot-com/ta-chat-clone">☕ 15 Min</a>
+  </footer>
+
+  <script>
+    function toggle(id) {
+      document.getElementById(id).classList.toggle('open');
+    }
+
+    let scrollPosition = 0;
+    const imageWidth = 285; // 280px image + 5px gap
+    const carousel = document.getElementById('carouselImages');
+
+    function nextSlide() {
+      scrollPosition += imageWidth;
+      if (scrollPosition >= carousel.scrollWidth - 858) scrollPosition = 0;
+      carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    }
+
+    function prevSlide() {
+      scrollPosition -= imageWidth;
+      if (scrollPosition < 0) scrollPosition = carousel.scrollWidth - 858;
+      carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    }
+
+    setInterval(nextSlide, 2500);
+  </script>
 </body>
 </html>
