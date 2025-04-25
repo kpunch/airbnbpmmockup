@@ -22,24 +22,22 @@
 
     .content-frame {
       max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      border: 20px solid transparent;
+      margin: 10px auto;
+      padding: 10px;
+      border: 10px solid transparent;
       background-image: url('https://polyhaven.com/a/dark_wood'); /* Dark wood texture */
       background-size: cover;
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
-      color: #fff; /* Ensure text is readable against the dark wood */
     }
 
     .content-frame h2 {
-      margin-left: 10px;
-      color: #ff5a5f; /* Airbnb brand color for headings */
+      color: black;
     }
 
     .content-frame p,
     .content-frame ul {
-      margin-left: 10px;
-      color: #fff;
+      margin-left: 15px;
+      color: darkgray;
     }
 
     .content-frame ul li {
@@ -68,12 +66,23 @@
       border-radius: 5px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      width: 45%;
+      width: 25%;
     }
 
     .gold-button:hover {
       transform: translateY(-2px);
       box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .spacer {
+      height: 10px;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .accordion {
+      box-shadow: 0px 5px 15px lightgray;
     }
 
     footer {
@@ -87,10 +96,24 @@
       color: #ff5a5f;
     }
 
-    img.benefits {
-      float: left;
-      max-width: 500px;
-      margin-left: 10px;
+    .carousel {
+      text-align: center;
+    }
+
+    .carousel h2 {
+      color: black;
+    }
+
+    .carousel-images {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      flex-shrink: 0;
+      transition: transform 0.5s ease;
     }
   </style>
 </head>
@@ -103,19 +126,44 @@
     <div class="video-frame">
       <iframe width="672" height="378" src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <div class="button-container">
-        <a href="" class="gold-button">Join Our Mission</a>
-        <a href="" class="gold-button">Shape the Future of Travel</a>
+        <a href="" class="gold-button">Apply Now</a>
+        <a href="" class="gold-button">See all PM & PMM Roles</a>
       </div>
     </div>
+  </div>
 
+  <div class="spacer"></div>
+
+  <div class="content-frame">
     <h2>📘 About Airbnb</h2>
-    <p>Airbnb was born in 2007 when two hosts welcomed three guests to their San Francisco home and has since grown into a global phenomenon. Over 5 million hosts have welcomed over 2 billion guest arrivals in nearly every country worldwide. With a mission to create a world where anyone can belong anywhere, Airbnb continues to redefine how we think about travel, community, and connection.</p>
+<p>Airbnb was born out of a simple yet revolutionary idea in 2007, when two designers, Brian Chesky and Joe Gebbia, opened their San Francisco apartment to three guests in need of a place to stay during a sold-out design conference. This humble beginning sparked a global movement, combining exceptional design thinking with the power of community. Today, Airbnb stands as a beacon of innovation and creativity, with over 5 million hosts welcoming more than 1 billion guests around the world.</p>
+
+<p>At its core, Airbnb redefines the way people connect and explore the world, blending functionality and aesthetics to create extraordinary travel experiences. For design-focused product managers, Airbnb represents a unique opportunity to shape the future of human-centered design at scale. Our platform is a living canvas, where every pixel, interaction, and feature is thoughtfully crafted to delight users, empower hosts, and build trust within a global network of travelers.</p>
+
+<p>Airbnb's DNA is rooted in design excellence, from the intuitive simplicity of our booking flow to the personalized experiences powered by cutting-edge AI. As a design-focused product manager, you’ll collaborate with world-class designers, engineers, and researchers to push boundaries and solve complex problems with elegance and empathy. Together, we’ll craft seamless user journeys that inspire exploration, foster belonging, and elevate the role of design in shaping human connections.</p>
+
+<p>If you’re passionate about combining data-driven insights with creative vision, and you’re ready to lead the charge in designing the future of travel and hospitality, Airbnb is your stage. Join us to create meaningful, impactful products that empower people to live anywhere and feel at home everywhere.</p>
 
     <h2>🌍 The Community You Will Join</h2>
-    <p>Airbnb's commitment to community is at the heart of everything we do. Our Product Management and Marketing teams have merged into a single unified force, enabling us to paint perception with evocative truth and deliver on that promise. Under the leadership of our CEO, a design visionary, we foster a culture of creativity and innovation that shapes the future of travel.</p>
+<p>Airbnb's commitment to community is at the heart of everything we do. This ethos drives us to continually innovate and improve how we connect people and foster belonging worldwide. Our Product Management and Marketing teams have merged into a single unified force, enabling us to paint perception with precision and deliver seamless, design-forward experiences.</p>
 
-    <h3>✨ Futureproof Consumer and Customer AI Ecosystem</h3>
+<p>For our consumers—travelers seeking unique, personalized experiences—we’ve introduced groundbreaking advancements, such as AI-powered travel planning tools that curate bespoke itineraries based on individual preferences. Our enhanced search algorithms now surface the most relevant stays and experiences, combining the power of machine learning with human-centered design to inspire exploration.</p>
+
+<p>For our customers—hosts who open their homes and hearts to travelers—we’ve rolled out intuitive tools to simplify hosting. Recent updates include dynamic pricing algorithms to optimize earnings, advanced reservation management systems, and enriched analytics dashboards to provide actionable insights. These innovations empower hosts to create exceptional guest experiences while maximizing their potential as entrepreneurs.</p>
+
+<p>By integrating cutting-edge technology with our deep-rooted commitment to community, Airbnb continues to set the standard for meaningful connections in the global travel ecosystem. Together, we’re shaping a future where everyone, everywhere, can truly belong.</p>  </div>
+
+  <div class="spacer"></div>
+
+  <div class="accordion">
+    <h2>✨ Futureproof Consumer and Customer AI Ecosystem</h2>
     <p>Airbnb leverages cutting-edge AI to personalize recommendations, streamline communication, and elevate customer service experiences. Our generative AI initiatives empower hosts and guests with tailored solutions, making every interaction seamless and delightful. Join us to build the tools that will redefine travel for the next decade.</p>
+<ul>
+  <li><a href="https://aimresearch.co/market-industry/airbnbs-200-million-ai-acquisition-is-redefining-your-next-vacation-with-new-tech-hires">Airbnb's $200 Million AI Acquisition Is Redefining Your Next Vacation</a></li>
+  <li><a href="https://aiexpert.network/airbnb-ai/">Case Study: Airbnb’s Strategic Use of AI</a></li>
+  <li><a href="https://www.costaysolutions.com/post/the-future-of-airbnb-embracing-ai-to-redefine-travel-experiences">The Future of Airbnb: Embracing AI to Redefine Travel Experiences</a></li>
+  <li><a href="https://www.businesswire.com/news/home/20250425052452/en/Airbnbs-2025-Tech-Playbook-Digital-Innovation-AI-and-Global-ICT-Strategies---ResearchAndMarkets.com">Airbnb's 2025 Tech Playbook: Digital Innovation, AI and Global ICT Strategies</a></li>
+</ul>
 
     <h2>🚀 The Difference You Will Make</h2>
     <p>As a Senior Product Manager, you'll lead cross-functional teams to create innovative solutions that enhance the Airbnb experience. From ideation to execution, your work will have a direct impact on millions of users worldwide.</p>
@@ -144,13 +192,41 @@
     </ul>
   </div>
 
+  <div class="spacer"></div>
+
+  <div class="carousel">
+    <h2>☀️ Live your life while building our Vision.</h2>
+    <div class="carousel-images" id="carouselImages">
+      <img src="sketching.png" alt="Sketching">
+      <img src="poshpatio.png" alt="Patio">
+      <img src="vibinglaptop.png" alt="Vibing with Laptop">
+      <img src="chateau.png" alt="Chateau">
+      <img src="Lunchchat.png" alt="Lunch Chat">
+      <img src="deserthouse.png" alt="Desert House">
+      <img src="groupchat.png" alt="Group Chat">
+      <img src="stoneentrywelcome.png" alt="Stone Entry">
+      <img src="sketching.png" alt="Sketching">
+      <img src="poshpatio.png" alt="Patio">
+      <img src="vibinglaptop.png" alt="Vibing with Laptop">
+      <img src="chateau.png" alt="Chateau">
+      <img src="Lunchchat.png" alt="Lunch Chat">
+      <img src="deserthouse.png" alt="Desert House">
+      <img src="groupchat.png" alt="Group Chat">
+      <img src="stoneentrywelcome.png" alt="Stone Entry">
+      <img src="sketching.png" alt="Sketching">
+      <img src="poshpatio.png" alt="Patio">
+      <img src="vibinglaptop.png" alt="Vibing with Laptop">
+      <img src="chateau.png" alt="Chateau">
+      <img src="Lunchchat.png" alt="Lunch Chat">
+      <img src="deserthouse.png" alt="Desert House">
+      <img src="groupchat.png" alt="Group Chat">
+      <img src="stoneentrywelcome.png" alt="Stone Entry">
+    </div>
+  </div>
+
   <footer>
     <h2>✨ Take the Leap</h2>
     <p>This isn't just a job—it's your chance to shape the future of travel and community. Join a team of visionaries who are changing the world, one guest and host at a time. Let's create something extraordinary together.</p>
-    <div class="button-container">
-      <button>☕ Coffee Chat - 30 Min</button>
-      <button>☕ Coffee Chat - 15 Min</button>
-    </div>
   </footer>
 </body>
 </html>
