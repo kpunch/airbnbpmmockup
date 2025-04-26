@@ -228,45 +228,49 @@ footer h2{color:#000;margin-top:0}
 
 <!-- ─── JS: ACCORDION & CAROUSEL ─────────────────────── -->
 <script>
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Accordion toggles ────────────────────────────── */
-  document.querySelectorAll('.accordion h2').forEach(h=>{
-    h.addEventListener('click',()=>{
+  /* ── Accordion toggles (unchanged) ─────────────────── */
+  document.querySelectorAll('.accordion h2').forEach(h => {
+    h.addEventListener('click', () => {
       const panel = h.nextElementSibling;
-      document.querySelectorAll('.accordion-content').forEach(p=>{
-        if(p!==panel) p.style.display='none';
+      document.querySelectorAll('.accordion-content').forEach(p => {
+        if (p !== panel) p.style.display = 'none';
       });
-      panel.style.display = panel.style.display==='block'?'none':'block';
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
     });
   });
 
-  /* ── Endless 3-image carousel (1-image step) ───────── */
-  const track  = document.getElementById('carouselImages');
-  const imgs   = Array.from(track.children);
-  const gap    = 15;
-  const imgW   = imgs[0].offsetWidth;
-  const step   = imgW + gap;
-  const visible= 3;
-  let index    = 0;
+  /* ── Endless carousel — advances ONE full image each time ── */
+  const track   = document.getElementById('carouselImages');
+  const initial = Array.from(track.children);      // original imgs
+  const gap     = 15;                              // must match CSS column-gap
+  const imgW    = initial[0].offsetWidth;          // image width
+  const step    = imgW + gap;                      // one-image stride
+  const visible = 3;                               // images shown at once
+  let index     = 0;
 
-  /* clone first 3 to end for seamless loop */
-  imgs.slice(0,visible).forEach(img=>track.appendChild(img.cloneNode(true)));
+  /* clone first N images to the end for a seamless wrap-around */
+  initial.slice(0, visible).forEach(img => {
+    track.appendChild(img.cloneNode(true));
+  });
 
-  function slide(){
-    index++;
-    track.style.transform = `translateX(-${index*step}px)`;
-    track.style.transition='transform .6s';
+  function slide () {
+    index += 1;
+    track.style.transition = 'transform 0.6s';
+    track.style.transform  = `translateX(-${index * step}px)`;
 
-    if(index===imgs.length){
-      setTimeout(()=>{
-        track.style.transition='none';
-        track.style.transform='translateX(0)';
-        index=0;
-      },3500);
+    /* when we've shifted past the last ORIGINAL image, reset after dwell */
+    if (index === initial.length) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        track.style.transform  = 'translateX(0)';
+        index = 0;
+      }, 3500);                                    // wait one full interval
     }
   }
-  setInterval(slide,3500);
+
+  setInterval(slide, 3500);                        // advance every 3.5 s
 });
 </script>
 </body>
