@@ -4,301 +4,251 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Senior Product Manager – Community Platform @ Airbnb</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #4A4A4A; /* Darker gray for text */
+    /* ─────────── GLOBAL ─────────── */
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f9f9f9;
+      color:#4A4A4A;
+    }
+    header{
+      background:#FF5A5F;
+      color:#fff;
+      padding:2rem;
+      text-align:center;
+    }
+    .spacer{height:10px;}
+
+    /* ─────────── PICTURE FRAME ─────────── */
+    .picture-frame{
+      max-width:860px;
+      margin:0 auto 40px;
+      position:relative;
+
+      /* wooden frame */
+      border:20px solid #8B4513;
+      border-bottom:90px solid #8B4513;  /* tall rail for buttons */
+      background:#F5DEB3;               /* same colour as matte */
+
+      box-shadow:
+        inset 2px 2px 5px   rgba(0,0,0,.5),
+        0     5px 15px      rgba(0,0,0,.3);
+      overflow:hidden; /* crop black letter-boxing */
     }
 
-    header {
-      background-color: #FF5A5F;
-      color: white;
-      padding: 2rem;
-      text-align: center;
+    /* wrapper lets us “zoom” the iframe to kill YouTube side bars */
+    .video-wrap{
+      width:100%;
+      aspect-ratio:16/9;  /* reserves height with no JS */
+      overflow:hidden;
+      border:10px solid #F5DEB3;   /* parchment matte */
+      background:#F5DEB3;
+      position:relative;
+    }
+    .video-wrap iframe{
+      position:absolute;
+      top:50%;left:50%;
+      width:120%;height:120%;      /* zoom a bit ⇒ no black bars */
+      transform:translate(-50%,-50%);
+      border:none;
+      background:#F5DEB3;
     }
 
-    .content-frame {
-      max-width: 800px;
-      margin: 10px auto;
-      padding: 10px;
-      border: 10px solid transparent;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+    /* ─────────── BUTTON BAR ─────────── */
+    .button-container{
+      position:absolute;
+      bottom:20px;                 /* sits on wooden rail   */
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:10px;                    /* ≈10 px between buttons*/
+    }
+    .gold-button{
+      flex:0 0 30%;                /* each = 30 % of inside width */
+      height:48px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(#FFD700,#DAA520);
+      color:#fff;
+      font-weight:bold;
+      text-decoration:none;
+      border-radius:4px;
+      box-shadow:0 4px 6px rgba(0,0,0,.2);
+      transition:.2s;
+    }
+    .gold-button:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 8px rgba(0,0,0,.3);
     }
 
-    .content-frame h2 {
-      color: black;
+    /* ─────────── CONTENT CONTAINERS ─────────── */
+    .content-frame,
+    .accordion,
+    footer,
+    .carousel{
+      max-width:800px;
+      margin:10px auto;
+      padding:10px;
+      border:10px solid transparent;
+      box-shadow:0 5px 15px rgba(0,0,0,.3);
+      background-image:url('https://polyhaven.com/a/dark_wood');
+      background-size:cover;
     }
-
-    .content-frame p,
-    .content-frame ul {
-      font-size: 14pt;
-      color: #4A4A4A; /* Darker gray for readability */
-      margin-left: 15px;
+    .content-frame{
+      background:#fff;
+      border:none;
+      box-shadow:0 5px 15px rgba(0,0,0,.3);
     }
+    .content-frame h2{color:#000;margin-top:0}
+    .content-frame p,.content-frame ul{font-size:14pt;margin-left:15px}
+    .content-frame ul li{margin-bottom:10px}
 
-    .content-frame ul li {
-      margin-bottom: 10px;
-    }
+    /* accordion specifics */
+    .accordion h2{cursor:pointer;color:#fff;margin:0}
+    .accordion-content{display:none;padding:10px;background:#fff;color:#4A4A4A}
 
-/* ───────── FRAME ───────── */
-.picture-frame{
-  max-width:860px;
-  position:relative;
-  margin:0 auto 40px;
-  border:20px solid #8B4513;   /* dark-brown frame */
-  border-bottom:90px solid #8B4513; /* taller rail for buttons   */
-  background:#F5DEB3;          /* same colour as matte          */
-  box-shadow:
-      inset 2px 2px 5px rgba(0,0,0,.5),
-      0 5px 15px rgba(0,0,0,.3);
-}
+    /* carousel specifics */
+    .carousel{overflow:hidden;position:relative}
+    .carousel h2{color:#fff;margin-top:0}
+    .carousel-images{display:flex;animation:slide 3.5s linear infinite}
+    .carousel-images img{height:250px;flex-shrink:0}
 
-/* ─────── VIDEO (letter-boxing removed) ─────── */
-.video-wrap{
-  width:100%;
-  aspect-ratio:16/9;       /* reserves the height            */
-  overflow:hidden;         /* crop what overflows            */
-  border:10px solid #F5DEB3; /* parchment matte               */
-  box-sizing:border-box;
-}
-
-.video-wrap iframe{
-  position:absolute;
-  top:50%; left:50%;
-  width:120%; height:120%; /* zoom-in just enough to lose bars */
-  transform:translate(-50%,-50%);
-  border:none;
-  background:#F5DEB3;      /* fallback while loading          */
-}
-
-/* ─────── BUTTON BAR ─────── */
-.button-container{
-  position:absolute;
-  bottom:20px;             /* sits on wooden rail             */
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:10px;                /* ≈10 px between buttons          */
-}
-
-.gold-button{
-  flex:0 0 30%;            /* each button 30 % of inside width*/
-  height:48px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(#FFD700,#DAA520);
-  color:#fff;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:4px;
-  box-shadow:0 4px 6px rgba(0,0,0,.2);
-  transition:.2s;
-}
-.gold-button:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 8px rgba(0,0,0,.3);
-}
-
-    .spacer {
-      height: 10px;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    .accordion {
-      max-width: 800px;
-      margin: 10px auto;
-      padding: 10px;
-      border: 10px solid transparent;
-      background-image: url('https://polyhaven.com/a/dark_wood');
-      background-size: cover;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .accordion h2 {
-      cursor: pointer;
-    }
-
-    .accordion-content {
-      display: none; /* All sections collapsed by default */
-      padding: 10px;
-    }
-
-    footer {
-      max-width: 800px;
-      margin: 10px auto;
-      padding: 10px;
-      border: 10px solid transparent;
-      background-image: url('https://polyhaven.com/a/dark_wood');
-      background-size: cover;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-      text-align: center;
-    }
-
-    footer h2 {
-      color: #ff5a5f;
-    }
-
-    .carousel {
-      max-width: 800px;
-      margin: 10px auto;
-      padding: 10px;
-      border: 10px solid transparent;
-      background-image: url('https://polyhaven.com/a/dark_wood');
-      background-size: cover;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .carousel-images {
-      display: flex;
-      animation: slide 3.5s linear infinite;
-    }
-
-    .carousel-images img {
-      height: 250px;
-      flex-shrink: 0;
-    }
-
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+    @keyframes slide{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-100%)}
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>🏠 Senior Product Manager, Community Experience Platform @ Airbnb</h1>
   </header>
 
-<div class="picture-frame">
-  <div class="video-wrap">          <!-- NEW wrapper -->
-    <iframe
-      src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1&controls=0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <!-- -------  Picture frame with video & buttons  ------- -->
+  <div class="picture-frame">
 
-  <div class="button-container">
-    <a href="https://careers.airbnb.com/positions/6688969/"                      class="gold-button">Apply Now</a>
-    <a href="https://careers.airbnb.com/positions/?_departments=product"         class="gold-button">See all PM & PMM Roles</a>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&amp;loop=1&amp;autoplay=1&amp;mute=1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="button-container">
+      <a href="https://careers.airbnb.com/positions/6688969/"                       class="gold-button">Apply Now</a>
+      <a href="https://careers.airbnb.com/positions/?_departments=product"          class="gold-button">See All PM &amp; PMM Roles</a>
+    </div>
   </div>
-</div>
 
   <div class="spacer"></div>
 
+  <!-- -------  Main content  ------- -->
   <div class="content-frame">
     <h2>📘 About Airbnb</h2>
-<p>Airbnb was born out of a simple yet revolutionary idea in 2007, when two designers, Brian Chesky and Joe Gebbia, opened their San Francisco apartment to three guests in need of a place to stay during a sold-out design conference. This humble beginning sparked a global movement, combining exceptional design thinking with the power of community. Today, Airbnb stands as a beacon of innovation and creativity, with over 5 million hosts welcoming more than 1 billion guests around the world.</p>
+    <p>Airbnb was born out of a simple yet revolutionary idea in 2007, when two designers, Brian Chesky and Joe Gebbia, opened their San Francisco apartment to three guests in need of a place to stay during a sold-out design conference. This humble beginning sparked a global movement, combining exceptional design thinking with the power of community. Today, Airbnb stands as a beacon of innovation and creativity, with over 5 million hosts welcoming more than 1 billion guests around the world.</p>
 
-<p>At its core, Airbnb redefines the way people connect and explore the world, blending functionality and aesthetics to create extraordinary travel experiences. For design-focused product managers, Airbnb represents a unique opportunity to shape the future of human-centered design at scale. Our platform is a living canvas, where every pixel, interaction, and feature is thoughtfully crafted to delight users, empower hosts, and build trust within a global network of travelers.</p>
+    <p>At its core, Airbnb redefines the way people connect and explore the world, blending functionality and aesthetics to create extraordinary travel experiences. For design-focused product managers, Airbnb represents a unique opportunity to shape the future of human-centered design at scale. Our platform is a living canvas, where every pixel, interaction, and feature is thoughtfully crafted to delight users, empower hosts, and build trust within a global network of travelers.</p>
 
-<p>Airbnb's DNA is rooted in design excellence, from the intuitive simplicity of our booking flow to the personalized experiences powered by cutting-edge AI. As a design-focused product manager, you’ll collaborate with world-class designers, engineers, and researchers to push boundaries and solve complex problems with elegance and empathy. Together, we’ll craft seamless user journeys that inspire exploration, foster belonging, and elevate the role of design in shaping human connections.</p>
+    <p>Airbnb's DNA is rooted in design excellence, from the intuitive simplicity of our booking flow to the personalized experiences powered by cutting-edge AI. As a design-focused product manager, you’ll collaborate with world-class designers, engineers, and researchers to push boundaries and solve complex problems with elegance and empathy. Together, we’ll craft seamless user journeys that inspire exploration, foster belonging, and elevate the role of design in shaping human connections.</p>
 
-<p>If you’re passionate about combining data-driven insights with creative vision, and you’re ready to lead the charge in designing the future of travel and hospitality, Airbnb is your stage. Join us to create meaningful, impactful products that empower people to live anywhere and feel at home everywhere.</p>
+    <p>If you’re passionate about combining data-driven insights with creative vision, and you’re ready to lead the charge in designing the future of travel and hospitality, Airbnb is your stage. Join us to create meaningful, impactful products that empower people to live anywhere and feel at home everywhere.</p>
 
     <h2>🌍 The Community You Will Join</h2>
-<p>Airbnb's commitment to community is at the heart of everything we do. This ethos drives us to continually innovate and improve how we connect people and foster belonging worldwide. Our Product Management and Marketing teams have merged into a single unified force, enabling us to paint perception with precision and deliver seamless, design-forward experiences.</p>
+    <p>Airbnb's commitment to community is at the heart of everything we do. This ethos drives us to continually innovate and improve how we connect people and foster belonging worldwide. Our Product Management and Marketing teams have merged into a single unified force, enabling us to paint perception with precision and deliver seamless, design-forward experiences.</p>
 
-<p>For our consumers—travelers seeking unique, personalized experiences—we’ve introduced groundbreaking advancements, such as AI-powered travel planning tools that curate bespoke itineraries based on individual preferences. Our enhanced search algorithms now surface the most relevant stays and experiences, combining the power of machine learning with human-centered design to inspire exploration.</p>
+    <p>For our consumers—travelers seeking unique, personalized experiences—we’ve introduced groundbreaking advancements, such as AI-powered travel planning tools that curate bespoke itineraries based on individual preferences. Our enhanced search algorithms now surface the most relevant stays and experiences, combining the power of machine learning with human-centered design to inspire exploration.</p>
 
-<p>For our customers—hosts who open their homes and hearts to travelers—we’ve rolled out intuitive tools to simplify hosting. Recent updates include dynamic pricing algorithms to optimize earnings, advanced reservation management systems, and enriched analytics dashboards to provide actionable insights. These innovations empower hosts to create exceptional guest experiences while maximizing their potential as entrepreneurs.</p>
+    <p>For our customers—hosts who open their homes and hearts to travelers—we’ve rolled out intuitive tools to simplify hosting. Recent updates include dynamic pricing algorithms to optimize earnings, advanced reservation management systems, and enriched analytics dashboards to provide actionable insights. These innovations empower hosts to create exceptional guest experiences while maximizing their potential as entrepreneurs.</p>
 
-<p>By integrating cutting-edge technology with our deep-rooted commitment to community, Airbnb continues to set the standard for meaningful connections in the global travel ecosystem. Together, we’re shaping a future where everyone, everywhere, can truly belong.</p>  </div>
-
-  <div class="spacer"></div>
-
-  <div class="accordion">
-
-<h2>✨ Futureproofing Consumer and Customer AI Ecosystems</h2>
-<p>Airbnb leverages cutting-edge AI to personalize recommendations, streamline communication, and elevate customer service experiences. Our generative AI initiatives empower hosts and guests with tailored solutions, making every interaction seamless and delightful. Join us to build the tools that will redefine travel for the next decade.</p>
-
-<ul>
-  <li>
-    <a href="https://aimresearch.co/market-industry/airbnbs-200-million-ai-acquisition-is-redefining-your-next-vacation-with-new-tech-hires" target="_blank">
-      Airbnb's $200 Million AI Acquisition Is Redefining Your Next Vacation
-    </a> - This article discusses Airbnb's investment in AI technologies and outlines how the $200 million acquisition is expected to enhance customer experiences by integrating cutting-edge machine learning tools. [Citation: AIM Research]
-  </li>
-  <li>
-    <a href="https://aiexpert.network/airbnb-ai/" target="_blank">
-      Case Study: Airbnb’s Strategic Use of AI
-    </a> - A detailed case study that highlights Airbnb's strategic adoption of AI, showcasing the importance of data-driven decision-making and the impact of predictive analytics on business growth. [Citation: AI Expert Network]
-  </li>
-  <li>
-    <a href="https://www.costaysolutions.com/post/the-future-of-airbnb-embracing-ai-to-redefine-travel-experiences" target="_blank">
-      The Future of Airbnb: Embracing AI to Redefine Travel Experiences
-    </a> - This article focuses on Airbnb's forward-thinking approach to leveraging AI, exploring how technology is reshaping the travel and hospitality industry to create personalized experiences. [Citation: CStay Solutions]
-  </li>
-  <li>
-    <a href="https://www.businesswire.com/news/home/20250425052452/en/Airbnbs-2025-Tech-Playbook-Digital-Innovation-AI-and-Global-ICT-Strategies---ResearchAndMarkets.com" target="_blank">
-      Airbnb's 2025 Tech Playbook: Digital Innovation, AI and Global ICT Strategies
-    </a> - A comprehensive overview of Airbnb's 2025 technology roadmap, detailing its commitment to digital innovation, AI advancements, and global ICT strategies to stay competitive in the travel ecosystem. [Citation: Business Wire]
-  </li>
-</ul>    
-
-<h2>🚀 The Difference You Will Make</h2>
-    <p>As a Senior Product Manager, you'll lead cross-functional teams to create innovative solutions that enhance the Airbnb experience. From ideation to execution, your work will have a direct impact on millions of users worldwide.</p>
-
-    <h2>🗓 A Typical Day</h2>
-    <ul>
-      <li>Understand the competitive landscape. Challenge the status quo. Influence design and product marketing teams to inspire people towards a unified outcome.</li>
-      <li>Define success with clearly measurable objectives and key results.</li>
-      <li>Define a winning product strategy and create a sound roadmap.</li>
-      <li>Align the vision, OKR, strategy, and roadmap with senior leaders and stakeholders across the company.</li>
-      <li>Prioritize work based on inputs from many stakeholders, while being flexible to iterate/change.</li>
-      <li>Maintain the product backlog and the product roadmap.</li>
-      <li>Partner with senior tech leads and execute the vision with cross-function leaders from multiple teams.</li>
-      <li>Present product roadmap and status to leadership on an ongoing basis.</li>
-    </ul>
-
-    <h2>🧠 Your Expertise</h2>
-    <ul>
-      <li>8+ years of product management, or product design experience (at least 5 out of the 8 years in a product management role).</li>
-      <li>Exceptional communication skills. Being able to adapt communication style for different types of audiences.</li>
-      <li>Ability to appreciate and articulate great user experience.</li>
-      <li>Ability to quickly absorb technical concepts and communicate them to a non-technical audience.</li>
-      <li>Outcome-oriented. Articulates the desired outcome and works collaboratively to create a path to achieve it.</li>
-      <li>Experience working with partners beyond just one’s immediate cross-functional team in a product management or business role.</li>
-      <li>Radical thinking paired with strong execution. Can envision a world different from the status quo with the ability to articulate a clear path to get there.</li>
-    </ul>
+    <p>By integrating cutting-edge technology with our deep-rooted commitment to community, Airbnb continues to set the standard for meaningful connections in the global travel ecosystem. Together, we’re shaping a future where everyone, everywhere, can truly belong.</p>
   </div>
 
   <div class="spacer"></div>
 
+  <!-- accordion -->
+  <div class="accordion">
+
+    <h2>✨ Futureproofing Consumer and Customer AI Ecosystems</h2>
+    <div class="accordion-content">
+      <p>Airbnb leverages cutting-edge AI to personalize recommendations, streamline communication, and elevate customer-service experiences. Our generative-AI initiatives empower hosts and guests with tailored solutions, making every interaction seamless and delightful. Join us to build the tools that will redefine travel for the next decade.</p>
+
+      <ul>
+        <li><a href="https://aimresearch.co/market-industry/airbnbs-200-million-ai-acquisition-is-redefining-your-next-vacation-with-new-tech-hires" target="_blank">Airbnb's $200 Million AI Acquisition Is Redefining Your Next Vacation</a> – outlines how the acquisition boosts customer experiences.  [Citation: AIM Research]</li>
+        <li><a href="https://aiexpert.network/airbnb-ai/" target="_blank">Case Study: Airbnb’s Strategic Use of AI</a> – detailed analysis of Airbnb's adoption of AI.  [Citation: AI Expert Network]</li>
+        <li><a href="https://www.costaysolutions.com/post/the-future-of-airbnb-embracing-ai-to-redefine-travel-experiences" target="_blank">The Future of Airbnb: Embracing AI to Redefine Travel Experiences</a> – explores how technology is reshaping hospitality. [Citation: CStay Solutions]</li>
+        <li><a href="https://www.businesswire.com/news/home/20250425052452/en/Airbnbs-2025-Tech-Playbook-Digital-Innovation-AI-and-Global-ICT-Strategies---ResearchAndMarkets.com" target="_blank">Airbnb's 2025 Tech Playbook: Digital Innovation, AI and Global ICT Strategies</a> – comprehensive overview of Airbnb's technology roadmap. [Citation: Business Wire]</li>
+      </ul>
+    </div>
+
+    <h2>🚀 The Difference You Will Make</h2>
+    <div class="accordion-content">
+      <p>As a Senior Product Manager, you'll lead cross-functional teams to create innovative solutions that enhance the Airbnb experience. From ideation to execution, your work will have a direct impact on millions of users worldwide.</p>
+    </div>
+
+    <h2>🗓 A Typical Day</h2>
+    <div class="accordion-content">
+      <ul>
+        <li>Understand the competitive landscape. Challenge the status quo. Influence design and product-marketing teams to inspire people toward a unified outcome.</li>
+        <li>Define success with clearly measurable objectives and key results.</li>
+        <li>Define a winning product strategy and create a sound roadmap.</li>
+        <li>Align the vision, OKR, strategy, and roadmap with senior leaders and stakeholders across the company.</li>
+        <li>Prioritize work based on inputs from many stakeholders, while being flexible to iterate/change.</li>
+        <li>Maintain the product backlog and the product roadmap.</li>
+        <li>Partner with senior tech leads and execute the vision with cross-function leaders from multiple teams.</li>
+        <li>Present product roadmap and status to leadership on an ongoing basis.</li>
+      </ul>
+    </div>
+
+    <h2>🧠 Your Expertise</h2>
+    <div class="accordion-content">
+      <ul>
+        <li>8+ years of product-management or product-design experience (at least 5 in a PM role).</li>
+        <li>Exceptional communication skills, adaptable to different audiences.</li>
+        <li>Ability to appreciate and articulate great user experience.</li>
+        <li>Ability to quickly absorb technical concepts and communicate them to a non-technical audience.</li>
+        <li>Outcome-oriented: articulates desired outcomes and works collaboratively to achieve them.</li>
+        <li>Experience working with partners beyond one’s immediate cross-functional team.</li>
+        <li>Radical thinking paired with strong execution: can envision a world different from the status quo and articulate a clear path to get there.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- carousel -->
   <div class="carousel">
     <h2>☀️ Live your life while building our Vision.</h2>
     <div class="carousel-images" id="carouselImages">
-      <img src="sketching.png" alt="Sketching">
-      <img src="poshpatio.png" alt="Patio">
-      <img src="vibinglaptop.png" alt="Vibing with Laptop">
-      <img src="chateau.png" alt="Chateau">
-      <img src="Lunchchat.png" alt="Lunch Chat">
-      <img src="deserthouse.png" alt="Desert House">
-      <img src="groupchat.png" alt="Group Chat">
-      <img src="stoneentrywelcome.png" alt="Stone Entry">
-      <img src="sketching.png" alt="Sketching">
-      <img src="poshpatio.png" alt="Patio">
-      <img src="vibinglaptop.png" alt="Vibing with Laptop">
-      <img src="chateau.png" alt="Chateau">
-      <img src="Lunchchat.png" alt="Lunch Chat">
-      <img src="deserthouse.png" alt="Desert House">
-      <img src="groupchat.png" alt="Group Chat">
-      <img src="stoneentrywelcome.png" alt="Stone Entry">
-      <img src="sketching.png" alt="Sketching">
-      <img src="poshpatio.png" alt="Patio">
-      <img src="vibinglaptop.png" alt="Vibing with Laptop">
-      <img src="chateau.png" alt="Chateau">
-      <img src="Lunchchat.png" alt="Lunch Chat">
-      <img src="deserthouse.png" alt="Desert House">
-      <img src="groupchat.png" alt="Group Chat">
-      <img src="stoneentrywelcome.png" alt="Stone Entry">
+      <img src="sketching.png"        alt="Sketching">
+      <img src="poshpatio.png"        alt="Patio">
+      <img src="vibinglaptop.png"     alt="Vibing with Laptop">
+      <img src="chateau.png"          alt="Chateau">
+      <img src="Lunchchat.png"        alt="Lunch Chat">
+      <img src="deserthouse.png"      alt="Desert House">
+      <img src="groupchat.png"        alt="Group Chat">
+      <img src="stoneentrywelcome.png"alt="Stone Entry">
+      <img src="sketching.png"        alt="Sketching">
+      <img src="poshpatio.png"        alt="Patio">
+      <img src="vibinglaptop.png"     alt="Vibing with Laptop">
+      <img src="chateau.png"          alt="Chateau">
+      <img src="Lunchchat.png"        alt="Lunch Chat">
+      <img src="deserthouse.png"      alt="Desert House">
+      <img src="groupchat.png"        alt="Group Chat">
+      <img src="stoneentrywelcome.png"alt="Stone Entry">
+      <img src="sketching.png"        alt="Sketching">
+      <img src="poshpatio.png"        alt="Patio">
+      <img src="vibinglaptop.png"     alt="Vibing with Laptop">
+      <img src="chateau.png"          alt="Chateau">
+      <img src="Lunchchat.png"        alt="Lunch Chat">
+      <img src="deserthouse.png"      alt="Desert House">
+      <img src="groupchat.png"        alt="Group Chat">
+      <img src="stoneentrywelcome.png"alt="Stone Entry">
     </div>
   </div>
 
@@ -306,26 +256,23 @@
     <h2>✨ Take the Leap</h2>
     <p>This isn't just a job—it's your chance to shape the future of travel and community. Join a team of visionaries who are changing the world, one guest and host at a time. Let's create something extraordinary together.</p>
   </footer>
-<script>
-  // JavaScript for accordion functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', function () {
-        // Collapse all other sections
-        document.querySelectorAll('.accordion-content').forEach(content => {
-          if (content !== this.nextElementSibling) {
-            content.style.display = 'none';
-          }
+  <!-- accordion JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () =>{
+      document.querySelectorAll('.accordion h2').forEach(h=>{
+        h.addEventListener('click',()=>{
+          const content=h.nextElementSibling;
+          // close others
+          document.querySelectorAll('.accordion-content').forEach(c=>{
+            if(c!==content)c.style.display='none';
+          });
+          // toggle this one
+          content.style.display=(content.style.display==='block')?'none':'block';
         });
-
-        // Toggle the clicked section
-        const content = this.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
       });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
+```
