@@ -43,27 +43,30 @@
       margin-bottom: 10px;
     }
 
+/* FRAME -------------------------------------------------------- */
 .picture-frame{
-  max-width: 860px;          /* wider frame (pic 2 is ~848 px)   */
-  height: auto;              /* let height follow its contents   */
-  border: 20px solid #8B4513;
-  border-bottom: 60px solid #8B4513;
-  margin: 0 auto 20px;
-  position: relative;
+  max-width: 860px;          /* same width as before */
+  height:auto;               /* let height grow with content       */
+  overflow:hidden;           /* hide YouTube’s side letter-boxing  */
+  position:relative;
+  border:20px solid #8B4513;
+  border-bottom:60px solid #8B4513;   /* bottom rail for buttons   */
+  margin:0 auto 20px;
   box-shadow:
     inset 2px 2px 5px rgba(0,0,0,.5),
     0 5px 15px rgba(0,0,0,.3);
   background:#8B4513;
 }
 
-/* 2.  Make the “matte” and video stretch the full width */
+/* VIDEO (removes black bars and fills the frame horizontally) --- */
 .picture-frame iframe{
-  display:block;             /* kill inline-gap */
-  width:100%;                /* fill the frame  */
-  height:auto;               /* keep aspect     */
-  aspect-ratio: 16/9;        /* modern browsers */
-  border:10px solid #F5DEB3; /* parchment matte */
+  width:100%;                /* fill the full interior width      */
+  height:auto;               /* keep aspect ratio                  */
+  aspect-ratio:16/9;         /* modern browsers -- keeps height    */
+  display:block;
+  border:10px solid #F5DEB3; /* parchment matte                    */
   box-sizing:border-box;
+  object-fit:cover;          /* crops tiny slivers of black bars   */
 }
 
 
@@ -77,19 +80,16 @@
   display:flex;
 }
 
-/* 4.  Full-width, flat-top gold buttons */
 .gold-button{
-  flex:1;
-  display:flex;              /* perfect vertical centring */
+  flex:0 0 30%;            /* ← each button now 30 % of the frame */
+  display:flex;
   justify-content:center;
   align-items:center;
-  margin:0;                  /* remove the 10 px gap */
-  border-radius:0 0 5px 5px; /* square top, slight bottom curve */
-  padding:0;                 /* height is controlled by .button-container */
   background:linear-gradient(to bottom,#FFD700,#DAA520);
   color:#fff;
   font-weight:bold;
   text-decoration:none;
+  border-radius:0 0 5px 5px;
   box-shadow:0 4px 6px rgba(0,0,0,.2);
   transition:transform .2s,box-shadow .2s;
 }
