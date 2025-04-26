@@ -43,58 +43,60 @@
       margin-bottom: 10px;
     }
 
+/* ───────── FRAME ───────── */
 .picture-frame{
   max-width:860px;
-  /* height can grow with content; bottom rail now tall enough for buttons */
-  height:auto;
-  border:20px solid #8B4513;
-  border-bottom:80px solid #8B4513;   /* ← higher bottom rail               */
-  margin:0 auto 20px;
   position:relative;
-  background:#F5DEB3;                /* same parchment colour as matte      */
-  overflow:hidden;                   /* hides any stray letter-boxing       */
+  margin:0 auto 40px;
+  border:20px solid #8B4513;   /* dark-brown frame */
+  border-bottom:90px solid #8B4513; /* taller rail for buttons   */
+  background:#F5DEB3;          /* same colour as matte          */
   box-shadow:
-     inset 2px 2px 5px rgba(0,0,0,.5),
-     0 5px 15px rgba(0,0,0,.3);
+      inset 2px 2px 5px rgba(0,0,0,.5),
+      0 5px 15px rgba(0,0,0,.3);
 }
 
-/* ──────────────────────────────── VIDEO ────────────────────────────────── */
-.picture-frame iframe{
-  display:block;
-  width:100%;                        /* fill full width                     */
-  aspect-ratio:16/9;
-  height:auto;
-  border:10px solid #F5DEB3;         /* parchment matte                     */
+/* ─────── VIDEO (letter-boxing removed) ─────── */
+.video-wrap{
+  width:100%;
+  aspect-ratio:16/9;       /* reserves the height            */
+  overflow:hidden;         /* crop what overflows            */
+  border:10px solid #F5DEB3; /* parchment matte               */
   box-sizing:border-box;
-  background:#F5DEB3;                /* same colour => replaces black bars  */
-  object-fit:cover;                  /* crops micro-bars if YouTube adds any*/
 }
 
-/* ────────────────────────────── BUTTON BAR ─────────────────────────────── */
+.video-wrap iframe{
+  position:absolute;
+  top:50%; left:50%;
+  width:120%; height:120%; /* zoom-in just enough to lose bars */
+  transform:translate(-50%,-50%);
+  border:none;
+  background:#F5DEB3;      /* fallback while loading          */
+}
+
+/* ─────── BUTTON BAR ─────── */
 .button-container{
   position:absolute;
-  bottom:15px;                       /* sits on the wooden rail             */
-  left:50%;                          /* centre the whole bar                */
+  bottom:20px;             /* sits on wooden rail             */
+  left:50%;
   transform:translateX(-50%);
   display:flex;
-  gap:10px;                          /* 10-pixel space between buttons      */
+  gap:10px;                /* ≈10 px between buttons          */
 }
 
-/* each button = 30 % of inner frame width (minus the gap) */
 .gold-button{
-  flex:0 0 30%;
+  flex:0 0 30%;            /* each button 30 % of inside width*/
+  height:48px;
   display:flex;
   justify-content:center;
   align-items:center;
-  height:46px;                       /* tidy height inside 80-px rail       */
-  padding:0;
   background:linear-gradient(#FFD700,#DAA520);
   color:#fff;
   font-weight:bold;
   text-decoration:none;
   border-radius:4px;
   box-shadow:0 4px 6px rgba(0,0,0,.2);
-  transition:transform .2s,box-shadow .2s;
+  transition:.2s;
 }
 .gold-button:hover{
   transform:translateY(-2px);
@@ -176,16 +178,17 @@
   </header>
 
 <div class="picture-frame">
-  <iframe
-    width="740"
-    height="416"
-    src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+  <div class="video-wrap">          <!-- NEW wrapper -->
+    <iframe
+      src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&loop=1&autoplay=1&mute=1&controls=0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
   <div class="button-container">
-    <a href="https://careers.airbnb.com/positions/6688969/" class="gold-button">Apply Now</a>
-    <a href="https://careers.airbnb.com/positions/?_departments=product" class="gold-button">See all PM & PMM Roles</a>
+    <a href="https://careers.airbnb.com/positions/6688969/"                      class="gold-button">Apply Now</a>
+    <a href="https://careers.airbnb.com/positions/?_departments=product"         class="gold-button">See all PM & PMM Roles</a>
   </div>
 </div>
 
