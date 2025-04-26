@@ -43,53 +43,56 @@
       margin-bottom: 10px;
     }
 
-/* FRAME -------------------------------------------------------- */
 .picture-frame{
-  max-width: 860px;          /* same width as before */
-  height:auto;               /* let height grow with content       */
-  overflow:hidden;           /* hide YouTube’s side letter-boxing  */
-  position:relative;
+  max-width:860px;
+  /* height can grow with content; bottom rail now tall enough for buttons */
+  height:auto;
   border:20px solid #8B4513;
-  border-bottom:60px solid #8B4513;   /* bottom rail for buttons   */
+  border-bottom:80px solid #8B4513;   /* ← higher bottom rail               */
   margin:0 auto 20px;
+  position:relative;
+  background:#F5DEB3;                /* same parchment colour as matte      */
+  overflow:hidden;                   /* hides any stray letter-boxing       */
   box-shadow:
-    inset 2px 2px 5px rgba(0,0,0,.5),
-    0 5px 15px rgba(0,0,0,.3);
-  background:#8B4513;
+     inset 2px 2px 5px rgba(0,0,0,.5),
+     0 5px 15px rgba(0,0,0,.3);
 }
 
-/* VIDEO (removes black bars and fills the frame horizontally) --- */
+/* ──────────────────────────────── VIDEO ────────────────────────────────── */
 .picture-frame iframe{
-  width:100%;                /* fill the full interior width      */
-  height:auto;               /* keep aspect ratio                  */
-  aspect-ratio:16/9;         /* modern browsers -- keeps height    */
   display:block;
-  border:10px solid #F5DEB3; /* parchment matte                    */
+  width:100%;                        /* fill full width                     */
+  aspect-ratio:16/9;
+  height:auto;
+  border:10px solid #F5DEB3;         /* parchment matte                     */
   box-sizing:border-box;
-  object-fit:cover;          /* crops tiny slivers of black bars   */
+  background:#F5DEB3;                /* same colour => replaces black bars  */
+  object-fit:cover;                  /* crops micro-bars if YouTube adds any*/
 }
 
-
- /* 3.  Pin the button bar to the bottom rail, edge-to-edge */
+/* ────────────────────────────── BUTTON BAR ─────────────────────────────── */
 .button-container{
   position:absolute;
-  left:20px;                 /* same as side border */
-  right:20px;
-  bottom:0;                  /* flush with bottom   */
-  height:50px;               /* matches pic 2       */
+  bottom:15px;                       /* sits on the wooden rail             */
+  left:50%;                          /* centre the whole bar                */
+  transform:translateX(-50%);
   display:flex;
+  gap:10px;                          /* 10-pixel space between buttons      */
 }
 
+/* each button = 30 % of inner frame width (minus the gap) */
 .gold-button{
-  flex:0 0 30%;            /* ← each button now 30 % of the frame */
+  flex:0 0 30%;
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(to bottom,#FFD700,#DAA520);
+  height:46px;                       /* tidy height inside 80-px rail       */
+  padding:0;
+  background:linear-gradient(#FFD700,#DAA520);
   color:#fff;
   font-weight:bold;
   text-decoration:none;
-  border-radius:0 0 5px 5px;
+  border-radius:4px;
   box-shadow:0 4px 6px rgba(0,0,0,.2);
   transition:transform .2s,box-shadow .2s;
 }
