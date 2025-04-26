@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,63 +32,62 @@
       /* wooden frame */
       border:20px solid #8B4513;
       border-bottom:90px solid #8B4513;  /* tall rail for buttons */
-      background:#F5DEB3;               /* same colour as matte */
+      background:#F5DEB3;               /* parchment matte colour */
 
       box-shadow:
         inset 2px 2px 5px   rgba(0,0,0,.5),
         0     5px 15px      rgba(0,0,0,.3);
-      overflow:hidden; /* crop black letter-boxing */
+      overflow:hidden;                 /* crop any letter-boxing */
     }
 
-    /* wrapper lets us “zoom” the iframe to kill YouTube side bars */
+    /* video wrapper lets us “zoom” the iframe to kill side bars */
     .video-wrap{
       width:100%;
-      aspect-ratio:16/9;  /* reserves height with no JS */
+      aspect-ratio:16/9;               /* keeps height responsive */
       overflow:hidden;
-      border:10px solid #F5DEB3;   /* parchment matte */
+      border:10px solid #F5DEB3;       /* parchment matte */
       background:#F5DEB3;
       position:relative;
     }
     .video-wrap iframe{
       position:absolute;
       top:50%;left:50%;
-      width:120%;height:120%;      /* zoom a bit ⇒ no black bars */
+      width:120%;height:120%;          /* slight zoom removes black bars */
       transform:translate(-50%,-50%);
       border:none;
       background:#F5DEB3;
     }
 
-/* BUTTON RAIL – sits in the centre of the 90-px wooden border */
-.button-rail{
-  position:absolute;
-  bottom:-21px;              /* 90-px border − 48-px btn height  ≈ centred */
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  align-items:center;
-}
-
-/* each button is 30 % of the inner frame width */
-.gold-button{
-  flex:0 0 30%;
-  height:48px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(#FFD700,#DAA520);
-  color:#fff;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:4px;
-  box-shadow:0 4px 6px rgba(0,0,0,.25);
-  transition:.2s;
-}
-.gold-button:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 8px rgba(0,0,0,.35);
-}
+    /* ─────────── BUTTON RAIL ─────────── */
+    .button-rail{
+      position:absolute;
+      /* centre vertically inside the 90-px rail: (90-48)/2 = 21 → −21px */
+      bottom:-21px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:10px;                        /* 10-px space between buttons */
+      justify-content:center;
+      align-items:center;
+    }
+    .gold-button{
+      flex:0 0 30%;                    /* each button 30% of inner width */
+      height:48px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(#FFD700,#DAA520);
+      color:#fff;
+      font-weight:bold;
+      text-decoration:none;
+      border-radius:4px;
+      box-shadow:0 4px 6px rgba(0,0,0,.25);
+      transition:.2s;
+    }
+    .gold-button:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 8px rgba(0,0,0,.35);
+    }
 
     /* ─────────── CONTENT CONTAINERS ─────────── */
     .content-frame,
@@ -133,30 +133,28 @@
     <h1>🏠 Senior Product Manager, Community Experience Platform @ Airbnb</h1>
   </header>
 
-  <!-- -------  Picture frame with video & buttons  ------- -->
- <!-- picture frame -->
-<div class="picture-frame">
+  <!-- ░░░ Picture frame with video & button rail ░░░ -->
+  <div class="picture-frame">
 
-  <div class="video-wrap">
-    <iframe
-      src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&amp;loop=1&amp;autoplay=1&amp;mute=1"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-  </div>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/HbFAXuBagnQ?playlist=HbFAXuBagnQ&amp;loop=1&amp;autoplay=1&amp;mute=1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
 
-  <!-- NEW rail that sits exactly on the big bottom border -->
-  <div class="button-rail">
-    <a href="https://careers.airbnb.com/positions/6688969/"                      class="gold-button">Apply Now</a>
-    <a href="https://careers.airbnb.com/positions/?_departments=product"         class="gold-button">See All PM &amp; PMM Roles</a>
+    <div class="button-rail">
+      <a class="gold-button" href="https://careers.airbnb.com/positions/6688969/">Apply&nbsp;Now</a>
+      <a class="gold-button" href="https://careers.airbnb.com/positions/?_departments=product">See All PM&nbsp;&amp;&nbsp;PMM Roles</a>
+    </div>
   </div>
-</div>
 
   <div class="spacer"></div>
 
-  <!-- -------  Main content  ------- -->
+  <!-- ░░░ Main content ░░░ -->
   <div class="content-frame">
     <h2>📘 About Airbnb</h2>
-    <p>Airbnb was born out of a simple yet revolutionary idea in 2007, when two designers, Brian Chesky and Joe Gebbia, opened their San Francisco apartment to three guests in need of a place to stay during a sold-out design conference. This humble beginning sparked a global movement, combining exceptional design thinking with the power of community. Today, Airbnb stands as a beacon of innovation and creativity, with over 5 million hosts welcoming more than 1 billion guests around the world.</p>
+    <p>Airbnb was born out of a simple yet revolutionary idea in 2007, when two designers, Brian Chesky and Joe Gebbia, opened their San Francisco apartment to three guests in need of a place to stay during a sold-out design conference. This humble beginning sparked a global movement, combining exceptional design thinking with the power of community. Today, Airbnb stands as a beacon of innovation and creativity, with over 5&nbsp;million hosts welcoming more than 1&nbsp;billion guests around the world.</p>
 
     <p>At its core, Airbnb redefines the way people connect and explore the world, blending functionality and aesthetics to create extraordinary travel experiences. For design-focused product managers, Airbnb represents a unique opportunity to shape the future of human-centered design at scale. Our platform is a living canvas, where every pixel, interaction, and feature is thoughtfully crafted to delight users, empower hosts, and build trust within a global network of travelers.</p>
 
@@ -167,16 +165,16 @@
     <h2>🌍 The Community You Will Join</h2>
     <p>Airbnb's commitment to community is at the heart of everything we do. This ethos drives us to continually innovate and improve how we connect people and foster belonging worldwide. Our Product Management and Marketing teams have merged into a single unified force, enabling us to paint perception with precision and deliver seamless, design-forward experiences.</p>
 
-    <p>For our consumers—travelers seeking unique, personalized experiences—we’ve introduced groundbreaking advancements, such as AI-powered travel planning tools that curate bespoke itineraries based on individual preferences. Our enhanced search algorithms now surface the most relevant stays and experiences, combining the power of machine learning with human-centered design to inspire exploration.</p>
+    <p>For our consumers—travelers seeking unique, personalized experiences—we’ve introduced groundbreaking advancements, such as AI-powered travel-planning tools that curate bespoke itineraries based on individual preferences. Our enhanced search algorithms now surface the most relevant stays and experiences, combining the power of machine learning with human-centered design to inspire exploration.</p>
 
-    <p>For our customers—hosts who open their homes and hearts to travelers—we’ve rolled out intuitive tools to simplify hosting. Recent updates include dynamic pricing algorithms to optimize earnings, advanced reservation management systems, and enriched analytics dashboards to provide actionable insights. These innovations empower hosts to create exceptional guest experiences while maximizing their potential as entrepreneurs.</p>
+    <p>For our customers—hosts who open their homes and hearts to travelers—we’ve rolled out intuitive tools to simplify hosting. Recent updates include dynamic pricing algorithms to optimize earnings, advanced reservation-management systems, and enriched analytics dashboards to provide actionable insights. These innovations empower hosts to create exceptional guest experiences while maximizing their potential as entrepreneurs.</p>
 
     <p>By integrating cutting-edge technology with our deep-rooted commitment to community, Airbnb continues to set the standard for meaningful connections in the global travel ecosystem. Together, we’re shaping a future where everyone, everywhere, can truly belong.</p>
   </div>
 
   <div class="spacer"></div>
 
-  <!-- accordion -->
+  <!-- ░░░ Accordion ░░░ -->
   <div class="accordion">
 
     <h2>✨ Futureproofing Consumer and Customer AI Ecosystems</h2>
@@ -184,10 +182,10 @@
       <p>Airbnb leverages cutting-edge AI to personalize recommendations, streamline communication, and elevate customer-service experiences. Our generative-AI initiatives empower hosts and guests with tailored solutions, making every interaction seamless and delightful. Join us to build the tools that will redefine travel for the next decade.</p>
 
       <ul>
-        <li><a href="https://aimresearch.co/market-industry/airbnbs-200-million-ai-acquisition-is-redefining-your-next-vacation-with-new-tech-hires" target="_blank">Airbnb's $200 Million AI Acquisition Is Redefining Your Next Vacation</a> – outlines how the acquisition boosts customer experiences.  [Citation: AIM Research]</li>
-        <li><a href="https://aiexpert.network/airbnb-ai/" target="_blank">Case Study: Airbnb’s Strategic Use of AI</a> – detailed analysis of Airbnb's adoption of AI.  [Citation: AI Expert Network]</li>
-        <li><a href="https://www.costaysolutions.com/post/the-future-of-airbnb-embracing-ai-to-redefine-travel-experiences" target="_blank">The Future of Airbnb: Embracing AI to Redefine Travel Experiences</a> – explores how technology is reshaping hospitality. [Citation: CStay Solutions]</li>
-        <li><a href="https://www.businesswire.com/news/home/20250425052452/en/Airbnbs-2025-Tech-Playbook-Digital-Innovation-AI-and-Global-ICT-Strategies---ResearchAndMarkets.com" target="_blank">Airbnb's 2025 Tech Playbook: Digital Innovation, AI and Global ICT Strategies</a> – comprehensive overview of Airbnb's technology roadmap. [Citation: Business Wire]</li>
+        <li><a href="https://aimresearch.co/market-industry/airbnbs-200-million-ai-acquisition-is-redefining-your-next-vacation-with-new-tech-hires" target="_blank">Airbnb's $200&nbsp;Million AI Acquisition Is Redefining Your Next Vacation</a> – outlines how the acquisition boosts customer experiences.  <em>[Citation: AIM Research]</em></li>
+        <li><a href="https://aiexpert.network/airbnb-ai/" target="_blank">Case Study: Airbnb’s Strategic Use of AI</a> – detailed analysis of Airbnb's adoption of AI.  <em>[Citation: AI Expert Network]</em></li>
+        <li><a href="https://www.costaysolutions.com/post/the-future-of-airbnb-embracing-ai-to-redefine-travel-experiences" target="_blank">The Future of Airbnb: Embracing AI to Redefine Travel Experiences</a> – explores how technology is reshaping hospitality. <em>[Citation: CStay Solutions]</em></li>
+        <li><a href="https://www.businesswire.com/news/home/20250425052452/en/Airbnbs-2025-Tech-Playbook-Digital-Innovation-AI-and-Global-ICT-Strategies---ResearchAndMarkets.com" target="_blank">Airbnb's 2025 Tech Playbook: Digital Innovation, AI and Global ICT Strategies</a> – comprehensive overview of Airbnb's technology roadmap. <em>[Citation: Business Wire]</em></li>
       </ul>
     </div>
 
@@ -226,7 +224,7 @@
 
   <div class="spacer"></div>
 
-  <!-- carousel -->
+  <!-- ░░░ Carousel ░░░ -->
   <div class="carousel">
     <h2>☀️ Live your life while building our Vision.</h2>
     <div class="carousel-images" id="carouselImages">
@@ -257,6 +255,7 @@
     </div>
   </div>
 
+  <!-- ░░░ Footer ░░░ -->
   <footer>
     <h2>✨ Take the Leap</h2>
     <p>This isn't just a job—it's your chance to shape the future of travel and community. Join a team of visionaries who are changing the world, one guest and host at a time. Let's create something extraordinary together.</p>
