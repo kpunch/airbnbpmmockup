@@ -241,41 +241,52 @@ footer h2{color:#ff5a5f;margin-top:0}
   </div>
 </footer>
 
-<!-- ─── JS: ACCORDION & 3-IMAGE CAROUSEL ─────────────── -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  /* Accordion toggling */
+
+  /* ── ACCORDION (unchanged) ─────────────────────────────────── */
   document.querySelectorAll('.accordion h2').forEach(h => {
-    h.addEventListener('click', ()=>{
+    h.addEventListener('click', () => {
       const panel = h.nextElementSibling;
-      document.querySelectorAll('.accordion-content').forEach(p=>{
-        if(p !== panel) p.style.display='none';
+      document.querySelectorAll('.accordion-content').forEach(p => {
+        if (p !== panel) p.style.display = 'none';
       });
-      panel.style.display = panel.style.display==='block' ? 'none' : 'block';
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
     });
   });
 
-  /* 3-image carousel */
-  const track = document.getElementById('carouselImages');
-  const imgs  = track.querySelectorAll('img');
-  const gap   = 15;                      // px gap matches CSS
-  const imgW  = imgs[0].offsetWidth;     // width including border
-  let index   = 0;
+  /* ── 3-image carousel that loops endlessly ─────────────────── */
+  const track   = document.getElementById('carouselImages');
+  const images  = Array.from(track.children);
+  const gap     = 15;                       // must match CSS gap
+  const imgW    = images[0].offsetWidth;
+  const step    = imgW + gap;
+  const visible = 3;                        // # visible frames
+  let index     = 0;
 
-  function slide(){
+  /* clone first N images to the end for smooth wrap-around —— */
+  images.slice(0, visible).forEach(img => {
+    const clone = img.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  function slide () {
     index++;
-    track.style.transform = `translateX(-${index*(imgW+gap)}px)`;
+    track.style.transform  = `translateX(-${index * step}px)`;
     track.style.transition = 'transform .6s';
 
-    if(index > imgs.length - 3){
-      setTimeout(()=>{
-        track.style.transition='none';
-        track.style.transform='translateX(0)';
+    /* when we’ve shown the real last set, schedule reset **after**
+       the full 3.5-s dwell time so the user sees it for one interval */
+    if (index === images.length) {
+      setTimeout(() => {
+        track.style.transition = 'none';          // jump with no animation
+        track.style.transform  = 'translateX(0)';
         index = 0;
-      },600);
+      }, 3500);                                   // wait one full interval
     }
   }
-  setInterval(slide,3500);
+
+  setInterval(slide, 3500);                       // move every 3.5 s
 });
 </script>
 </body>
