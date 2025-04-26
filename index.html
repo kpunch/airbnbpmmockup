@@ -43,55 +43,60 @@
       margin-bottom: 10px;
     }
 
-  .picture-frame {
-    max-width: 800px; /* Frame's maximum width */
-    height: 506px; /* Frame's fixed height */
-    margin: 0 auto 20px; /* Center the frame and add spacing */
-    border: 20px solid #8B4513; /* Dark brown frame border for top, left, and right */
-    border-bottom: 50px solid #8B4513; /* Larger bottom border */
-    position: relative; /* For positioning child elements */
-    box-shadow:
-      inset 2px 2px 5px rgba(0, 0, 0, 0.5), /* Inner shadow for bevel effect */
-      0px 5px 15px rgba(0, 0, 0, 0.3); /* Outer shadow for depth */
-    background: #8B4513; /* Solid dark brown background */
-  }
+.picture-frame{
+  max-width: 860px;          /* wider frame (pic 2 is ~848 px)   */
+  height: auto;              /* let height follow its contents   */
+  border: 20px solid #8B4513;
+  border-bottom: 60px solid #8B4513;
+  margin: 0 auto 20px;
+  position: relative;
+  box-shadow:
+    inset 2px 2px 5px rgba(0,0,0,.5),
+    0 5px 15px rgba(0,0,0,.3);
+  background:#8B4513;
+}
 
-  .picture-frame iframe {
-    width: 740px; /* Video width */
-    height: 416px; /* Video height */
-    border: 10px solid #F5DEB3; /* Parchment-colored border */
-    margin: 0 auto; /* Center the iframe within the frame */
-    display: block; /* Ensure the iframe is a block-level element */
-  }
+/* 2.  Make the “matte” and video stretch the full width */
+.picture-frame iframe{
+  display:block;             /* kill inline-gap */
+  width:100%;                /* fill the frame  */
+  height:auto;               /* keep aspect     */
+  aspect-ratio: 16/9;        /* modern browsers */
+  border:10px solid #F5DEB3; /* parchment matte */
+  box-sizing:border-box;
+}
 
 
-  .button-container {
-    position: absolute;
-    bottom: 10px; /* Place buttons at the bottom of the frame */
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center; /* Center the buttons */
-    gap: 10px; /* Add spacing between buttons */
-  }
+ /* 3.  Pin the button bar to the bottom rail, edge-to-edge */
+.button-container{
+  position:absolute;
+  left:20px;                 /* same as side border */
+  right:20px;
+  bottom:0;                  /* flush with bottom   */
+  height:50px;               /* matches pic 2       */
+  display:flex;
+}
 
-  .gold-button {
-    padding: 10px 20px;
-    background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold gradient for buttons */
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    flex: 1; /* Ensure buttons are of equal size */
-  }
-
-  .gold-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
-  }
+/* 4.  Full-width, flat-top gold buttons */
+.gold-button{
+  flex:1;
+  display:flex;              /* perfect vertical centring */
+  justify-content:center;
+  align-items:center;
+  margin:0;                  /* remove the 10 px gap */
+  border-radius:0 0 5px 5px; /* square top, slight bottom curve */
+  padding:0;                 /* height is controlled by .button-container */
+  background:linear-gradient(to bottom,#FFD700,#DAA520);
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 4px 6px rgba(0,0,0,.2);
+  transition:transform .2s,box-shadow .2s;
+}
+.gold-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 8px rgba(0,0,0,.3);
+}
 
     .spacer {
       height: 10px;
