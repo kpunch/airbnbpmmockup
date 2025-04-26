@@ -57,16 +57,16 @@
       background:#F5DEB3;
     }
 
-/* --- rail (full width on the wooden bottom border) --- */
+/* BUTTON RAIL – sits in the centre of the 90-px wooden border */
 .button-rail{
   position:absolute;
-  bottom:0;                 /* flush with frame’s bottom border  */
-  left:0; right:0;
-  height:90px;              /* same height as the wooden rail    */
+  bottom:-21px;              /* 90-px border − 48-px btn height  ≈ centred */
+  left:50%;
+  transform:translateX(-50%);
   display:flex;
-  justify-content:center;   /* centre whole group                */
-  align-items:center;
   gap:10px;
+  justify-content:center;
+  align-items:center;
 }
 
 /* each button is 30 % of the inner frame width */
