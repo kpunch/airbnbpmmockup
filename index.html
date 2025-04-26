@@ -43,53 +43,54 @@
       margin-bottom: 10px;
     }
 
-.video-frame {
-    max-width: 800px;
-    text-align: center;
-    margin: 0 auto 20px; /* Center the div and add spacing */
-    padding: 20px;
-    border: 20px solid brown; /* Solid dark brown borders */
-    border-bottom: 50px solid brown; /* Larger bottom border */
-    background: #3d2614; /* Solid darker brown color */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
-    border-radius: 5px;
+  .video-frame {
+    max-width: 800px; /* Maximum width of the picture frame */
+    margin: 0 auto 20px; /* Center the frame and add spacing */
+    border: 20px solid #8B4513; /* Solid dark brown frame color */
+    border-bottom: 50px solid #8B4513; /* Larger bottom border */
+    background: #8B4513; /* Frame background color */
+    box-shadow:
+      inset 2px 2px 5px rgba(0, 0, 0, 0.5), /* Inner shadow for bevel effect */
+      0px 5px 15px rgba(0, 0, 0, 0.3); /* Outer shadow for depth */
+    border-radius: 0; /* Squared corners */
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Prevents content overflow */
   }
 
 
   .video-frame iframe {
-    width: 672px;
-    height: 378px;
-    border: none;
+    width: calc(100% - 40px); /* Adjust width to fit inside the frame */
+    height: calc((100% - 70px) * 0.5625); /* Maintain 16:9 aspect ratio */
+    border: none; /* Remove iframe border */
+    display: block; /* Ensure the iframe fits inside */
+    margin: 20px auto 0; /* Align the iframe inside the frame */
   }
 
   .button-container {
     position: absolute;
-    bottom: 25px; /* Align with the bottom border */
-    width: 100%;
-    display: flex;
+    bottom: 15px; /* Place the buttons inside the bottom border */
+    left: 0;
+    width: 25%;
     justify-content: space-around;
   }
 
-    .gold-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold bevel effect */
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      text-align: center;
-      border-radius: 5px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      width: 25%;
-    }
+  .gold-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #FFD700, #DAA520); /* Gold bevel effect */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
 
-    .gold-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
-    }
+  .gold-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+  }
 
     .spacer {
       height: 10px;
